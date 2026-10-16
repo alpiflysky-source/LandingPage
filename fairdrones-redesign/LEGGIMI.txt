@@ -1,0 +1,35 @@
+FAIRDRONES — NUOVO SITO
+=======================
+
+CONTENUTO DELLA CARTELLA
+  index.html            Homepage (hero, schede, metodo, team, riconoscimenti, contatti)
+  privacy-policy.html   Informativa privacy (GDPR, artt. 13-14)
+  cookie-policy.html    Informativa cookie
+  assets/style.css      Tutto lo stile del sito
+  assets/fonts/         Font Inter e Manrope (in locale, niente Google Fonts)
+  assets/img/           Logo, foto del team e immagini
+
+COME VEDERLO
+  Fai doppio clic su index.html: si apre nel browser.
+
+PRIMA DI PUBBLICARE
+  1. Completa i campi evidenziati in giallo [DA COMPLETARE] nelle due policy:
+     titolare, indirizzo, P.IVA, email, hosting, provider email, tempi di
+     conservazione. Cercali con "Trova" (Cmd+F) dentro i file .html.
+  2. Cookie policy: verifica quali cookie imposta davvero il sito pubblicato
+     (es. con gli Strumenti per sviluppatori del browser > Applicazione > Cookie,
+     da una finestra in incognito senza essere loggato a WordPress) e compila la
+     tabella. Se aggiungi Google Analytics, mappe, video YouTube o pixel social,
+     servono un banner di consenso e l'aggiornamento della policy.
+  3. Link Instagram nel footer: ora punta a instagram.com, sostituiscilo con
+     l'indirizzo del vostro profilo (cerca "instagram.com" nei file .html).
+  4. Il modulo contatti in questi file e' solo grafico: non invia email.
+     Su WordPress usa il modulo WPForms gia' presente; su un hosting statico
+     serve un servizio di invio moduli.
+  5. Le immagini delle schede e della hero vengono da Unsplash (licenza
+     gratuita, uso commerciale consentito).
+
+NOTA
+  I testi delle policy sono una base di partenza costruita sui servizi che il
+  sito usa oggi. Non sono una consulenza legale: falli rivedere da un
+  professionista, soprattutto se cambiano i servizi usati.
