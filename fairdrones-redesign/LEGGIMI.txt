@@ -3,14 +3,19 @@ FAIRDRONES — NUOVO SITO
 
 CONTENUTO DELLA CARTELLA
   index.html            Homepage (hero, schede, metodo + software, team, riconoscimenti, contatti)
+  grazie.html           Pagina "Messaggio inviato" (usata solo se il browser ha JavaScript disattivato)
   privacy-policy.html   Informativa privacy (GDPR, artt. 13-14)
   cookie-policy.html    Informativa cookie
   assets/style.css      Tutto lo stile del sito
   assets/fonts/         Font Inter e Manrope (in locale, niente Google Fonts)
   assets/img/           Logo, foto del team e immagini
 
+  Fuori dalla cartella, nella radice del repository:
+  netlify.toml          Dice a Netlify di pubblicare la cartella fairdrones-redesign
+
 COME VEDERLO
   Fai doppio clic su index.html: si apre nel browser.
+  Attenzione: cosi' i moduli contatti NON inviano (vedi sezione MODULI CONTATTI).
 
 PRIMA DI PUBBLICARE
   1. Completa i campi evidenziati in giallo [DA COMPLETARE] nelle due policy:
@@ -18,25 +23,112 @@ PRIMA DI PUBBLICARE
      conservazione. Cercali con "Trova" (Cmd+F) dentro i file .html.
   2. Cookie policy: verifica quali cookie imposta davvero il sito pubblicato
      (es. con gli Strumenti per sviluppatori del browser > Applicazione > Cookie,
-     da una finestra in incognito senza essere loggato a WordPress) e compila la
-     tabella. Se aggiungi Google Analytics, mappe, video YouTube o pixel social,
-     servono un banner di consenso e l'aggiornamento della policy.
-  3. Link Instagram nel footer: ora punta a instagram.com, sostituiscilo con
-     l'indirizzo del vostro profilo (cerca "instagram.com" nei file .html).
-  4. Moduli contatti: i due moduli (rifugi e aziende) usano Netlify Forms.
-     Netlify li riconosce da solo al deploy (attributo data-netlify="true").
-     Per ricevere le compilazioni a info@fairdrones.it, sul pannello Netlify:
-       a. Progetto > Forms > "Enable form detection", poi rifai il deploy;
-       b. Project configuration > Notifications > Emails and webhooks >
-          Form submission notifications > Add notification > Email
-          notification: email info@fairdrones.it, form "Any form".
-     I messaggi restano visibili anche in Forms > contatto-rifugi /
-     contatto-aziende. Lo spam finisce in "Spam submissions".
-     Aprendo index.html dal computer (doppio clic) l'invio non funziona:
-     funziona solo sul sito pubblicato su Netlify. In caso di errore il sito
-     propone di scrivere direttamente a info@fairdrones.it.
+     da una finestra in incognito) e compila la tabella. Se aggiungi Google
+     Analytics, mappe, video YouTube o pixel social, servono un banner di
+     consenso e l'aggiornamento della policy.
+  3. Link Instagram nelle pagine legali: ora punta a instagram.com,
+     sostituiscilo con l'indirizzo del vostro profilo (cerca "instagram.com"
+     nei file .html).
+  4. Configura i moduli contatti su Netlify (sezione seguente).
   5. Le immagini delle schede e della hero vengono da Unsplash (licenza
      gratuita, uso commerciale consentito).
+
+
+MODULI CONTATTI (NETLIFY FORMS)
+===============================
+
+COME FUNZIONA
+  Il sito e' statico: non ha un server che possa spedire email. I due moduli
+  ("Per rifugi" e "Per aziende") usano quindi Netlify Forms, il servizio
+  moduli integrato in Netlify:
+    1. al deploy Netlify legge index.html e registra i due moduli
+       (riconosce l'attributo data-netlify="true");
+    2. quando un visitatore preme "Invia", il sito manda i dati a Netlify
+       senza ricaricare la pagina e mostra "Grazie! Il messaggio e' stato
+       inviato…";
+    3. Netlify salva il messaggio, lo controlla contro lo spam e lo
+       inoltra per email a info@fairdrones.it (notifica da impostare una volta
+       sola, vedi punto C).
+
+  I moduli registrati sono due:
+    contatto-rifugi    campi: tipo, nome, rifugio, email, messaggio
+    contatto-aziende   campi: tipo, nome, azienda, email, messaggio
+  Oggetto dell'email ricevuta:
+    "Nuova richiesta dal sito FairDrones — Rifugio"
+    "Nuova proposta dal sito FairDrones — Azienda"
+
+CONFIGURAZIONE (UNA VOLTA SOLA)
+  A. Pubblica il sito su Netlify, in uno di questi due modi:
+     - collegato a GitHub: Add new project > Import an existing project >
+       scegli il repository. Il file netlify.toml imposta gia' la cartella
+       da pubblicare (fairdrones-redesign): non cambiare "Publish directory";
+     - a mano: trascina la CARTELLA fairdrones-redesign (non la cartella
+       sopra) nell'area di deploy del progetto (Deploys > drag and drop).
+     In entrambi i casi index.html deve trovarsi nella radice del sito:
+     aprendo https://<tuo-sito>.netlify.app/ deve comparire la homepage.
+
+  B. Attiva il riconoscimento dei moduli:
+     nel progetto apri "Forms" nel menu a sinistra > "Enable form detection".
+     Poi RIFAI IL DEPLOY (Deploys > Trigger deploy > Deploy site, oppure
+     trascina di nuovo la cartella). Netlify cerca i moduli solo durante un
+     deploy: se salti questo passaggio gli invii vanno in errore.
+     Verifica: in "Forms" devono comparire contatto-rifugi e contatto-aziende.
+
+  C. Imposta l'email di notifica:
+     Project configuration > Notifications > Emails and webhooks >
+     "Form submission notifications" > Add notification > Email notification.
+       Email to notify:  info@fairdrones.it
+       Form:             Any form (cosi' arrivano entrambi i moduli)
+     Salva. (Se il menu ha nomi leggermente diversi, cerca "Form
+     notifications" nelle impostazioni del progetto.)
+
+  D. Fai una prova dal sito pubblicato (non dal file sul computer):
+     compila "Per rifugi" con la tua email e invia. Devi vedere il messaggio
+     verde di conferma, il messaggio in Forms > contatto-rifugi e, dopo
+     qualche minuto, l'email in info@fairdrones.it. Ripeti con "Per aziende".
+
+SE L'EMAIL NON ARRIVA
+  - Il messaggio e' in Forms ma l'email no: controlla la cartella Spam di
+    info@fairdrones.it (le notifiche partono da un indirizzo @netlify.com:
+    aggiungilo ai contatti) e verifica di aver salvato la notifica (punto C).
+  - Il messaggio non e' nemmeno in Forms: guarda "Spam submissions" nella
+    pagina del modulo. I messaggi segnati come spam non generano email.
+  - Sul sito compare "Non e' stato possibile inviare il modulo": Netlify non
+    ha registrato i moduli. Controlla il punto B (detection attiva + nuovo
+    deploy) e che la homepage sia alla radice del sito (punto A).
+  - Per rispondere a chi ha scritto usa l'indirizzo nel campo "email"
+    del messaggio ricevuto.
+
+COMPORTAMENTI PREVISTI
+  - Campi obbligatori: nome, rifugio/azienda, email. Se mancano il browser
+    lo segnala e non invia nulla.
+  - Se l'invio fallisce (rete assente, moduli non configurati) il sito mostra
+    un link "Scrivici direttamente a info@fairdrones.it" che apre l'email gia'
+    compilata con i dati inseriti: nessuna richiesta va persa.
+  - Aprendo index.html con doppio clic dal computer l'invio non parte e
+    compare un avviso: e' normale, funziona solo sul sito pubblicato.
+  - Browser con JavaScript disattivato: il modulo viene inviato in modo
+    classico e Netlify mostra la pagina grazie.html.
+  - Antispam: c'e' un campo nascosto "trappola" (bot-field) che i visitatori
+    non vedono; inoltre Netlify filtra lo spam in automatico.
+
+COSTI E LIMITI
+  Dall'aprile 2026 Netlify non conta piu' gli invii dei moduli nei crediti:
+  sui piani attuali (compreso quello gratuito) sono illimitati. Se il tuo
+  account usa ancora un vecchio piano "Starter", il limite e' di 100 invii
+  al mese: controlla in Team settings > Billing. Attenzione: se il progetto
+  supera i limiti del piano e viene messo in pausa, non riceve moduli.
+
+COME MODIFICARE I MODULI
+  - Indirizzo di destinazione: si cambia SOLO dal pannello (punto C).
+    Nel codice info@fairdrones.it compare solo come contatto di riserva
+    (costante CONTACT_EMAIL in fondo a index.html e link nel footer).
+  - Oggetto dell'email: campo nascosto name="subject" dentro ciascun form.
+  - Aggiungere un campo: inserisci in index.html un <input> o <textarea> con
+    un attributo name (es. name="telefono") e rifai il deploy: Netlify lo
+    registra al deploy successivo. Non rinominare i campi esistenti ne'
+    i nomi dei moduli (contatto-rifugi, contatto-aziende).
+
 
 NOTA
   I testi delle policy sono una base di partenza costruita sui servizi che il

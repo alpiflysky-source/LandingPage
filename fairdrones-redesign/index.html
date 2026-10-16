@@ -37,7 +37,7 @@
           <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
           <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="#contatti" class="btn btn-primary">Richiedi una demo</a>
+        <a href="#contatti" class="btn btn-primary nav-cta" aria-label="Richiedi una demo"><span class="cta-long" aria-hidden="true">Richiedi una demo</span><span class="cta-mid" aria-hidden="true">Richiedi demo</span><span class="cta-short" aria-hidden="true">Demo</span></a>
       </nav>
     </div>
   </div>
@@ -307,19 +307,19 @@
             </div>
 
             <div class="contact-card">
-              <form class="contact-form" name="contatto-rifugi" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <form class="contact-form" name="contatto-rifugi" action="/grazie.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="contatto-rifugi">
-                <input type="hidden" name="subject" value="Nuova richiesta dal sito FairDrones — Rifugio">
-                <input type="hidden" name="Tipo di contatto" value="Rifugio">
+                <input type="hidden" name="subject" data-remove-prefix value="Nuova richiesta dal sito FairDrones — Rifugio">
+                <input type="hidden" name="tipo" value="Rifugio">
                 <input type="text" name="bot-field" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="row">
                   <div class="field">
                     <label for="rifugio-nome">Nome e Cognome</label>
-                    <input type="text" id="rifugio-nome" name="Nome e Cognome" placeholder="Mario Rossi" autocomplete="name" required>
+                    <input type="text" id="rifugio-nome" name="nome" placeholder="Mario Rossi" autocomplete="name" required>
                   </div>
                   <div class="field">
                     <label for="rifugio-struttura">Nome Rifugio</label>
-                    <input type="text" id="rifugio-struttura" name="Rifugio" placeholder="Rifugio Alpino" required>
+                    <input type="text" id="rifugio-struttura" name="rifugio" placeholder="Rifugio Alpino" required>
                   </div>
                 </div>
                 <div class="field">
@@ -328,7 +328,7 @@
                 </div>
                 <div class="field">
                   <label for="rifugio-messaggio">Messaggio / Richiesta</label>
-                  <textarea id="rifugio-messaggio" name="Messaggio" placeholder="Descrivi di quali rifornimenti hai bisogno..."></textarea>
+                  <textarea id="rifugio-messaggio" name="messaggio" placeholder="Descrivi di quali rifornimenti hai bisogno..."></textarea>
                 </div>
                 <p class="form-note">Inviando il modulo accetti la nostra <a href="privacy-policy.html">Privacy Policy</a>.</p>
                 <button type="submit" class="btn btn-primary">Invia richiesta <svg width="16" height="16"><use href="#i-arrow"/></svg></button>
@@ -352,19 +352,19 @@
             </div>
 
             <div class="contact-card">
-              <form class="contact-form" name="contatto-aziende" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <form class="contact-form" name="contatto-aziende" action="/grazie.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="contatto-aziende">
-                <input type="hidden" name="subject" value="Nuova proposta dal sito FairDrones — Azienda">
-                <input type="hidden" name="Tipo di contatto" value="Azienda / Operatore">
+                <input type="hidden" name="subject" data-remove-prefix value="Nuova proposta dal sito FairDrones — Azienda">
+                <input type="hidden" name="tipo" value="Azienda / Operatore">
                 <input type="text" name="bot-field" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="row">
                   <div class="field">
                     <label for="azienda-nome">Nome e Cognome</label>
-                    <input type="text" id="azienda-nome" name="Nome e Cognome" placeholder="Mario Rossi" autocomplete="name" required>
+                    <input type="text" id="azienda-nome" name="nome" placeholder="Mario Rossi" autocomplete="name" required>
                   </div>
                   <div class="field">
                     <label for="azienda-societa">Azienda / Organizzazione</label>
-                    <input type="text" id="azienda-societa" name="Azienda" placeholder="Nome Azienda Srl" autocomplete="organization" required>
+                    <input type="text" id="azienda-societa" name="azienda" placeholder="Nome Azienda Srl" autocomplete="organization" required>
                   </div>
                 </div>
                 <div class="field">
@@ -373,7 +373,7 @@
                 </div>
                 <div class="field">
                   <label for="azienda-messaggio">Proposta / Idea di collaborazione</label>
-                  <textarea id="azienda-messaggio" name="Messaggio" placeholder="Raccontaci la tua idea o il tuo progetto..."></textarea>
+                  <textarea id="azienda-messaggio" name="messaggio" placeholder="Raccontaci la tua idea o il tuo progetto..."></textarea>
                 </div>
                 <p class="form-note">Inviando il modulo accetti la nostra <a href="privacy-policy.html">Privacy Policy</a>.</p>
                 <button type="submit" class="btn btn-primary">Proponi idea <svg width="16" height="16"><use href="#i-arrow"/></svg></button>
@@ -477,39 +477,57 @@
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
 
-  // Invio moduli con Netlify Forms (notifica email a info@fairdrones.it impostata dal pannello Netlify)
+  // Invio moduli con Netlify Forms.
+  // Netlify registra i form al deploy (data-netlify) e inoltra ogni invio
+  // a info@fairdrones.it tramite la notifica email impostata nel pannello.
+  // Senza JS il form fa un normale POST e Netlify reindirizza a /grazie.html.
   document.querySelectorAll('.contact-form').forEach(form => {
     const status = form.querySelector('.form-status');
     const btn = form.querySelector('button[type=submit]');
+    const SKIP = ['form-name', 'bot-field', 'subject'];
 
-    const mailtoFallback = () => {
-      const data = new FormData(form);
-      const skip = ['form-name', 'bot-field', 'subject'];
-      const body = [...data].filter(([k]) => !skip.includes(k)).map(([k, v]) => `${k}: ${v}`).join('\n');
-      return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(data.get('subject'))}&body=${encodeURIComponent(body)}`;
+    const labelOf = el => form.querySelector(`label[for="${el.id}"]`)?.textContent.trim() || el.name;
+
+    const mailtoLink = () => {
+      const fields = [...form.elements].filter(el => el.name && !SKIP.includes(el.name) && el.type !== 'submit');
+      const body = fields.map(el => `${el.type === 'hidden' ? 'Tipo di contatto' : labelOf(el)}: ${el.value}`).join('\n');
+      const subject = form.elements.subject.value;
+      return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    };
+
+    const show = (type, html) => {
+      status.className = 'form-status' + (type ? ' ' + type : '');
+      status.innerHTML = html;
     };
 
     form.addEventListener('submit', async e => {
       e.preventDefault();
-      if (form.querySelector('.hp').value) return;
+      if (!form.reportValidity()) return;
+
+      // Campo trappola compilato = bot: fingiamo il successo senza inviare
+      if (form.elements['bot-field'].value) { form.reset(); show('ok', 'Grazie! Il messaggio è stato inviato.'); return; }
+
+      // Aprendo il file dal computer non c'è nessun server che riceva il form
+      if (location.protocol === 'file:') {
+        show('err', `L'invio funziona solo sul sito pubblicato su Netlify. <a href="${mailtoLink()}">Apri l'email già compilata per ${CONTACT_EMAIL}</a>.`);
+        return;
+      }
+
       btn.disabled = true;
       form.classList.add('is-sending');
-      status.className = 'form-status';
-      status.textContent = 'Invio in corso…';
+      show('', 'Invio in corso…');
       try {
-        // Netlify Forms: POST url-encoded alla pagina stessa
         const res = await fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(new FormData(form)).toString()
         });
-        if (!res.ok) throw new Error('Errore di invio ' + res.status);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
         form.reset();
-        status.classList.add('ok');
-        status.textContent = 'Grazie! Il messaggio è stato inviato, ti risponderemo al più presto.';
+        show('ok', 'Grazie! Il messaggio è stato inviato, ti risponderemo al più presto.');
       } catch (err) {
-        status.classList.add('err');
-        status.innerHTML = `Non è stato possibile inviare il modulo. <a href="${mailtoFallback()}">Scrivici direttamente a ${CONTACT_EMAIL}</a>.`;
+        console.error('Invio modulo non riuscito:', err);
+        show('err', `Non è stato possibile inviare il modulo. <a href="${mailtoLink()}">Scrivici direttamente a ${CONTACT_EMAIL}</a>.`);
       } finally {
         btn.disabled = false;
         form.classList.remove('is-sending');

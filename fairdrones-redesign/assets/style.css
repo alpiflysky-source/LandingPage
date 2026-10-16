@@ -416,6 +416,13 @@ transform: scaleX(1);
 .nav-links .btn {
 padding: 10px 18px;
 flex-shrink: 0;
+white-space: nowrap;
+}
+
+/* Etichetta del pulsante CTA: si accorcia sugli schermi stretti */
+.cta-mid,
+.cta-short {
+display: none;
 }
 
 @media (max-width: 850px) {
@@ -424,11 +431,41 @@ display: none;
 }
 }
 
+@media (max-width: 600px) {
+header .nav {
+padding: 0 16px;
+}
+.nav-inner {
+gap: 10px;
+}
+.nav-links {
+gap: 10px;
+}
+}
+
+@media (max-width: 480px) {
+.cta-long {
+display: none;
+}
+.cta-mid {
+display: inline;
+}
+}
+
+@media (max-width: 360px) {
+.cta-mid {
+display: none;
+}
+.cta-short {
+display: inline;
+}
+}
+
 @media (max-width: 400px) {
 header {
 inset: 10px 0 auto;
 }
-.nav {
+header .nav {
 padding: 0 12px;
 }
 .nav-inner {
@@ -1584,6 +1621,9 @@ padding: 56px 0;
 header {
 inset: 8px 0 auto;
 }
+header .nav {
+padding: 0 8px;
+}
 .nav-inner {
 padding: 6px 8px 6px 10px;
 gap: 8px;
@@ -1600,6 +1640,10 @@ padding: 3px;
 .nav-links .btn {
 padding: 6px 12px;
 font-size: 0.8rem;
+}
+#theme-toggle {
+width: 32px;
+height: 32px;
 }
 
 .hero h1 {
