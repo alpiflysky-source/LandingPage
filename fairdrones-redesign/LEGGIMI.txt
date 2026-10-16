@@ -2,7 +2,7 @@ FAIRDRONES — NUOVO SITO
 =======================
 
 CONTENUTO DELLA CARTELLA
-  index.html            Homepage (hero, schede, metodo, team, riconoscimenti, contatti)
+  index.html            Homepage (hero, schede, metodo + software, team, riconoscimenti, contatti)
   privacy-policy.html   Informativa privacy (GDPR, artt. 13-14)
   cookie-policy.html    Informativa cookie
   assets/style.css      Tutto lo stile del sito
@@ -23,9 +23,14 @@ PRIMA DI PUBBLICARE
      servono un banner di consenso e l'aggiornamento della policy.
   3. Link Instagram nel footer: ora punta a instagram.com, sostituiscilo con
      l'indirizzo del vostro profilo (cerca "instagram.com" nei file .html).
-  4. Il modulo contatti in questi file e' solo grafico: non invia email.
-     Su WordPress usa il modulo WPForms gia' presente; su un hosting statico
-     serve un servizio di invio moduli.
+  4. Moduli contatti: entrambi i moduli (rifugi e aziende) inviano le
+     compilazioni a info@fairdrones.it tramite il servizio FormSubmit
+     (formsubmit.co), che funziona anche su hosting statico.
+     ATTIVAZIONE: alla PRIMA compilazione dal sito pubblicato FormSubmit
+     manda a info@fairdrones.it una email di conferma: clicca il link
+     "Activate Form", altrimenti i messaggi non vengono consegnati.
+     Se l'invio fallisce, il sito propone di scrivere direttamente via email.
+     Per cambiare indirizzo: cerca "info@fairdrones.it" in index.html.
   5. Le immagini delle schede e della hero vengono da Unsplash (licenza
      gratuita, uso commerciale consentito).
 
