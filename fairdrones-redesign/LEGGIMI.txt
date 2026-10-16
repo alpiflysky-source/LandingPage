@@ -23,14 +23,18 @@ PRIMA DI PUBBLICARE
      servono un banner di consenso e l'aggiornamento della policy.
   3. Link Instagram nel footer: ora punta a instagram.com, sostituiscilo con
      l'indirizzo del vostro profilo (cerca "instagram.com" nei file .html).
-  4. Moduli contatti: entrambi i moduli (rifugi e aziende) inviano le
-     compilazioni a info@fairdrones.it tramite il servizio FormSubmit
-     (formsubmit.co), che funziona anche su hosting statico.
-     ATTIVAZIONE: alla PRIMA compilazione dal sito pubblicato FormSubmit
-     manda a info@fairdrones.it una email di conferma: clicca il link
-     "Activate Form", altrimenti i messaggi non vengono consegnati.
-     Se l'invio fallisce, il sito propone di scrivere direttamente via email.
-     Per cambiare indirizzo: cerca "info@fairdrones.it" in index.html.
+  4. Moduli contatti: i due moduli (rifugi e aziende) usano Netlify Forms.
+     Netlify li riconosce da solo al deploy (attributo data-netlify="true").
+     Per ricevere le compilazioni a info@fairdrones.it, sul pannello Netlify:
+       a. Progetto > Forms > "Enable form detection", poi rifai il deploy;
+       b. Project configuration > Notifications > Emails and webhooks >
+          Form submission notifications > Add notification > Email
+          notification: email info@fairdrones.it, form "Any form".
+     I messaggi restano visibili anche in Forms > contatto-rifugi /
+     contatto-aziende. Lo spam finisce in "Spam submissions".
+     Aprendo index.html dal computer (doppio clic) l'invio non funziona:
+     funziona solo sul sito pubblicato su Netlify. In caso di errore il sito
+     propone di scrivere direttamente a info@fairdrones.it.
   5. Le immagini delle schede e della hero vengono da Unsplash (licenza
      gratuita, uso commerciale consentito).
 

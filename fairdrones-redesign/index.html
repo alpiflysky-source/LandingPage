@@ -307,12 +307,11 @@
             </div>
 
             <div class="contact-card">
-              <form class="contact-form" action="https://formsubmit.co/info@fairdrones.it" method="POST">
-                <input type="hidden" name="_subject" value="Nuova richiesta dal sito FairDrones — Rifugio">
+              <form class="contact-form" name="contatto-rifugi" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contatto-rifugi">
+                <input type="hidden" name="subject" value="Nuova richiesta dal sito FairDrones — Rifugio">
                 <input type="hidden" name="Tipo di contatto" value="Rifugio">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <input type="text" name="bot-field" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="row">
                   <div class="field">
                     <label for="rifugio-nome">Nome e Cognome</label>
@@ -353,12 +352,11 @@
             </div>
 
             <div class="contact-card">
-              <form class="contact-form" action="https://formsubmit.co/info@fairdrones.it" method="POST">
-                <input type="hidden" name="_subject" value="Nuova proposta dal sito FairDrones — Azienda">
+              <form class="contact-form" name="contatto-aziende" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contatto-aziende">
+                <input type="hidden" name="subject" value="Nuova proposta dal sito FairDrones — Azienda">
                 <input type="hidden" name="Tipo di contatto" value="Azienda / Operatore">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <input type="text" name="bot-field" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="row">
                   <div class="field">
                     <label for="azienda-nome">Nome e Cognome</label>
@@ -405,7 +403,6 @@
 
 <script>
   const CONTACT_EMAIL = 'info@fairdrones.it';
-  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + CONTACT_EMAIL;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Tabs (progetto + contatti), con autoplay opzionale
@@ -480,15 +477,16 @@
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
 
-  // Invio moduli -> info@fairdrones.it
+  // Invio moduli con Netlify Forms (notifica email a info@fairdrones.it impostata dal pannello Netlify)
   document.querySelectorAll('.contact-form').forEach(form => {
     const status = form.querySelector('.form-status');
     const btn = form.querySelector('button[type=submit]');
 
     const mailtoFallback = () => {
       const data = new FormData(form);
-      const body = [...data].filter(([k]) => !k.startsWith('_')).map(([k, v]) => `${k}: ${v}`).join('\n');
-      return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(data.get('_subject'))}&body=${encodeURIComponent(body)}`;
+      const skip = ['form-name', 'bot-field', 'subject'];
+      const body = [...data].filter(([k]) => !skip.includes(k)).map(([k, v]) => `${k}: ${v}`).join('\n');
+      return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(data.get('subject'))}&body=${encodeURIComponent(body)}`;
     };
 
     form.addEventListener('submit', async e => {
@@ -499,9 +497,13 @@
       status.className = 'form-status';
       status.textContent = 'Invio in corso…';
       try {
-        const res = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
-        const json = await res.json().catch(() => ({}));
-        if (!res.ok || String(json.success) !== 'true') throw new Error(json.message || 'Errore di invio');
+        // Netlify Forms: POST url-encoded alla pagina stessa
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        });
+        if (!res.ok) throw new Error('Errore di invio ' + res.status);
         form.reset();
         status.classList.add('ok');
         status.textContent = 'Grazie! Il messaggio è stato inviato, ti risponderemo al più presto.';
