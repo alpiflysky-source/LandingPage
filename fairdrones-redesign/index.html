@@ -504,9 +504,13 @@
       e.preventDefault();
       if (!form.reportValidity()) return;
 
-      // Il campo trappola (bot-field) lo valuta Netlify lato server: se e' pieno
-      // l'invio viene scartato come spam. Lo segnaliamo in console per il debug.
-      if (form.elements['bot-field'].value) console.warn('[Form] campo antispam compilato: Netlify scarterà questo invio come spam');
+      // Il campo trappola (bot-field) ferma i bot che inviano il form senza
+      // eseguire JavaScript. Qui siamo in un browser vero: l'autocompilazione o
+      // un'estensione possono riempirlo per errore e Netlify scarterebbe l'invio
+      // come spam, quindi lo svuotiamo prima di spedire.
+      const data = new FormData(form);
+      if (data.get('bot-field')) console.info('[Form] campo antispam riempito dal browser: svuotato prima dell\'invio');
+      data.set('bot-field', '');
 
       // Aprendo il file dal computer non c'è nessun server che riceva il form
       if (location.protocol === 'file:') {
@@ -521,7 +525,7 @@
         const res = await fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(form)).toString()
+          body: new URLSearchParams(data).toString()
         });
         console.info('[Form] risposta:', res.status, res.url, 'server:', res.headers.get('server'), 'redirect:', res.redirected);
         // Un redirect (es. fairdrones.it -> www.fairdrones.it) trasforma il POST in GET:
