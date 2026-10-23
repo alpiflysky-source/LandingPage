@@ -21,14 +21,13 @@ PRIMA DI PUBBLICARE
   1. Completa i campi evidenziati in giallo [DA COMPLETARE] nelle due policy:
      titolare, indirizzo, P.IVA, email, hosting, provider email, tempi di
      conservazione. Cercali con "Trova" (Cmd+F) dentro i file .html.
-  2. Cookie policy: verifica quali cookie imposta davvero il sito pubblicato
-     (es. con gli Strumenti per sviluppatori del browser > Applicazione > Cookie,
-     da una finestra in incognito) e compila la tabella. Se aggiungi Google
-     Analytics, mappe, video YouTube o pixel social, servono un banner di
-     consenso e l'aggiornamento della policy.
-  3. Link Instagram nelle pagine legali: ora punta a instagram.com,
-     sostituiscilo con l'indirizzo del vostro profilo (cerca "instagram.com"
-     nei file .html).
+  2. Cookie policy: e' completa. Il sito non imposta cookie e non carica
+     risorse esterne; salva solo la preferenza del tema (chiave "theme" nel
+     local storage), quindi non serve un banner. Se aggiungi Google Analytics,
+     mappe, video YouTube, pixel social o altri servizi esterni, servono un
+     banner di consenso e l'aggiornamento della cookie policy.
+  3. Instagram: tutti i link del footer puntano al profilo
+     https://www.instagram.com/fairdrones
   4. Configura i moduli contatti su Netlify (sezione seguente).
   5. Le immagini delle schede e della hero vengono da Unsplash (licenza
      gratuita, uso commerciale consentito).
