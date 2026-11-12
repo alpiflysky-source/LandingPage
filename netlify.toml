@@ -1,0 +1,5 @@
+# Configurazione Netlify (deploy collegato a GitHub)
+[build]
+  # Il sito si trova in questa cartella: Netlify pubblica solo il suo contenuto
+  publish = "fairdrones-redesign"
+  command = ""
