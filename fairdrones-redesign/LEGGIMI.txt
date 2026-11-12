@@ -2,7 +2,7 @@ FAIRDRONES — NUOVO SITO
 =======================
 
 CONTENUTO DELLA CARTELLA
-  index.html            Homepage: apertura con calcolatore, progetto, punti di forza, metodo,
+  index.html            Homepage: apertura, progetto, punti di forza, metodo,
                         software di volo, come decide il software, Fairbox, ricerca sul vento,
                         team, riconoscimenti, contatti
   grazie.html           Pagina "Messaggio inviato" (usata solo se il browser ha JavaScript disattivato)
@@ -34,11 +34,8 @@ PRIMA DI PUBBLICARE
      https://www.instagram.com/fairdrones
   4. Configura i moduli contatti su Netlify (sezione seguente).
   6. Contenuti da confermare nella homepage:
-     - il calcolatore "Quanto dista il tuo rifugio?" usa formule ipotetiche
-       (a piedi 4 km/h e 300 m/h in salita; in volo 10 m/s piu' 3 minuti):
-       sostituitele con i vostri dati, in fondo a index.html;
-     - il riquadro "Valutazione della missione" e il cedolino "Missione
-       combinata" mostrano dati di esempio (rifugio fittizio, meteo simulato);
+     - il riquadro "Valutazione della missione" mostra dati di esempio
+       (rifugio fittizio, meteo simulato);
      - verificate che si possano citare pubblicamente Politecnico di Milano,
        DJI FlyCart 100, i "100 test" e la prova dei 360 messaggi.
   5. Le immagini delle schede e della hero vengono da Unsplash (licenza
