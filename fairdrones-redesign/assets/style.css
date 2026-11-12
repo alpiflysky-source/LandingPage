@@ -430,7 +430,6 @@ h1, h2, h3 {
 
 .waybill {
   grid-column: 7 / 12;
-  min-height: min(1000px, calc((100vw - 2 * var(--m)) * 5 / 12 * 1.4));
   padding: 56px clamp(28px, 3.6vw, 56px) 64px;
   text-align: center;
   display: flex;
@@ -478,98 +477,6 @@ h1, h2, h3 {
   font-size: var(--step-small);
   line-height: 1.35;
   padding-inline: 8px;
-}
-
-/* L'elemento interattivo: ore a piedi contro minuti in volo */
-.trip {
-  margin-top: 40px;
-  width: 100%;
-}
-
-.trip-title {
-  font-size: var(--step-lead);
-}
-
-.trip-inputs {
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  text-align: left;
-}
-
-.trip-inputs label {
-  font-size: var(--step-small);
-  color: var(--ink-soft);
-  display: grid;
-  gap: 6px;
-}
-
-.trip-field {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--paper-2);
-  padding: 0 14px;
-  color: var(--ink);
-  font-weight: 600;
-}
-
-.trip-field input {
-  width: 100%;
-  min-width: 0;
-  min-height: 52px;
-  border: 0;
-  background: transparent;
-  font: 600 var(--step-lead) var(--text);
-  color: var(--ink);
-}
-
-.trip-field:focus-within {
-  outline: 3px solid var(--accent);
-}
-
-.trip-field input:focus {
-  outline: none;
-}
-
-.trip-out {
-  margin-top: 16px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.trip-out p {
-  display: grid;
-  gap: 2px;
-  padding: 16px 10px;
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.trip-out p:last-child {
-  background: var(--accent);
-  color: var(--accent-ink);
-}
-
-.trip-out span {
-  font-size: var(--step-small);
-  order: 2;
-}
-
-.trip-out output {
-  font-weight: 600;
-  font-size: var(--step-lead);
-  line-height: 1.1;
-  font-variant-numeric: tabular-nums;
-}
-
-.trip-note {
-  margin-top: 14px;
-  font-size: var(--step-small);
-  color: var(--ink-soft);
-  line-height: 1.45;
 }
 
 /* --------------------------------------------------------------------------
@@ -1754,10 +1661,6 @@ h1, h2, h3 {
   #theme-toggle {
     width: 40px;
     height: 40px;
-  }
-  .trip-inputs,
-  .trip-out {
-    grid-template-columns: 1fr;
   }
 }
 
