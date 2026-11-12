@@ -9,8 +9,7 @@ CONTENUTO DELLA CARTELLA
   privacy-policy.html   Informativa privacy (GDPR, artt. 13-14)
   cookie-policy.html    Informativa cookie
   assets/style.css      Tutto lo stile del sito
-  assets/fonts/         Font Anton e Work Sans (in locale, niente Google Fonts);
-                        Inter e Manrope sono del design precedente e non piu' usati
+  assets/fonts/         Font Manrope e Inter (in locale, niente Google Fonts)
   assets/img/           Logo, foto del team, immagini e render della scheda Fairbox
                         (fairbox-full.webp e fairbox-b1...b5.webp, ricavati dal modello 3D)
 
