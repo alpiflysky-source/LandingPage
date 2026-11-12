@@ -2,13 +2,17 @@ FAIRDRONES — NUOVO SITO
 =======================
 
 CONTENUTO DELLA CARTELLA
-  index.html            Homepage (hero, schede, metodo + software, team, riconoscimenti, contatti)
+  index.html            Homepage: apertura con calcolatore, progetto, punti di forza, metodo,
+                        software di volo, come decide il software, Fairbox, ricerca sul vento,
+                        team, riconoscimenti, contatti
   grazie.html           Pagina "Messaggio inviato" (usata solo se il browser ha JavaScript disattivato)
   privacy-policy.html   Informativa privacy (GDPR, artt. 13-14)
   cookie-policy.html    Informativa cookie
   assets/style.css      Tutto lo stile del sito
-  assets/fonts/         Font Inter e Manrope (in locale, niente Google Fonts)
-  assets/img/           Logo, foto del team e immagini
+  assets/fonts/         Font Anton e Work Sans (in locale, niente Google Fonts);
+                        Inter e Manrope sono del design precedente e non piu' usati
+  assets/img/           Logo, foto del team, immagini e render della scheda Fairbox
+                        (fairbox-full.webp e fairbox-b1...b5.webp, ricavati dal modello 3D)
 
   Fuori dalla cartella, nella radice del repository:
   netlify.toml          Dice a Netlify di pubblicare la cartella fairdrones-redesign
@@ -29,6 +33,14 @@ PRIMA DI PUBBLICARE
   3. Instagram: tutti i link del footer puntano al profilo
      https://www.instagram.com/fairdrones
   4. Configura i moduli contatti su Netlify (sezione seguente).
+  6. Contenuti da confermare nella homepage:
+     - il calcolatore "Quanto dista il tuo rifugio?" usa formule ipotetiche
+       (a piedi 4 km/h e 300 m/h in salita; in volo 10 m/s piu' 3 minuti):
+       sostituitele con i vostri dati, in fondo a index.html;
+     - il riquadro "Valutazione della missione" e il cedolino "Missione
+       combinata" mostrano dati di esempio (rifugio fittizio, meteo simulato);
+     - verificate che si possano citare pubblicamente Politecnico di Milano,
+       DJI FlyCart 100, i "100 test" e la prova dei 360 messaggi.
   5. Le immagini delle schede e della hero vengono da Unsplash (licenza
      gratuita, uso commerciale consentito).
 
