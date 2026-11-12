@@ -1,60 +1,65 @@
 /* ==========================================================================
-   FairDrones · "La bolla di consegna in quota"
-   Direzione: The page is the object (tasteskill v2, seed 1934259828)
-   Ogni sezione è un pezzo della stessa cartoleria appoggiato sul verde del
-   brand: biglietto, listino, foglio di viaggio, cedolini, coupon, retro.
+   FairDrones · stile del sito
+   Via di mezzo tra il primo design (fondi chiari, Manrope e Inter, angoli
+   arrotondati) e la "bolla di consegna" (struttura delle sezioni, fasce
+   verdi scure, listino, foglio di viaggio, coupon).
    ========================================================================== */
 
 @font-face {
-  font-family: 'Anton';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('fonts/anton-latin.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Work Sans';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400 600;
   font-display: swap;
-  src: url('fonts/worksans-latin.woff2') format('woff2');
+  src: url('fonts/inter-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url('fonts/manrope-latin.woff2') format('woff2');
 }
 
 /* --------------------------------------------------------------------------
    1. TOKEN
    -------------------------------------------------------------------------- */
 :root {
-  /* colori del brand: un fondo, una carta, un inchiostro, un accento */
-  --ground: #0e3416;
-  --ground-2: #0a2810;
-  --paper: #eeede8;
-  --paper-2: #e1e0d9;
+  /* fondo chiaro, carte bianche, inchiostro verde scuro, una fascia scura */
+  --ground: #f5f7f4;
+  --ground-2: #e9efe8;
+  --paper: #ffffff;
+  --paper-2: #eef3ec;
   --ink: #0e3416;
-  --ink-soft: #3d5a47;
-  --on-ground: #eeede8;
-  --on-ground-soft: #c5d3c8;
+  --ink-soft: #46604f;
+  --on-ground: #0e3416;
+  --on-ground-soft: #46604f;
+  --deep: #0e3416;
+  --deep-2: #0a2810;
+  --on-deep: #eef3ee;
+  --on-deep-soft: #b9cbbe;
   --accent: #0f8442;
   --accent-ink: #ffffff;
   --coupon: #0f6b39;
   --coupon-2: #187a45;
+  --line: #dde5dc;
 
-  /* tinte dei ritratti, a rotazione */
-  --tint-1: #7fbf92;
-  --tint-2: #d6d5cd;
-  --tint-3: #9cc4ab;
-  --tint-4: #c9d9c4;
+  /* forme */
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --lift: 0 1px 2px rgba(14, 52, 22, 0.05), 0 12px 32px rgba(14, 52, 22, 0.10);
 
   /* tipografia: cinque gradini */
   --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
   --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
   --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
-  --step-sub: clamp(1.875rem, 1.1rem + 2.1vw, 3rem);
-  --step-head: clamp(2.75rem, 1.4rem + 5.4vw, 6rem);
-  --step-display: clamp(3.25rem, 1rem + 7vw, 6.5rem);
+  --step-sub: clamp(1.625rem, 1.1rem + 1.6vw, 2.5rem);
+  --step-head: clamp(2.25rem, 1.2rem + 3.6vw, 4.25rem);
+  --step-display: clamp(2.75rem, 1rem + 5vw, 5rem);
 
-  --display: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
-  --text: 'Work Sans', system-ui, sans-serif;
+  --display: 'Manrope', 'Inter', system-ui, sans-serif;
+  --text: 'Inter', system-ui, sans-serif;
 
   /* cornice e ritmo */
   --m: clamp(16px, 2.2vw, 32px);
@@ -65,42 +70,46 @@
 }
 
 :root[data-theme="dark"] {
-  --ground: #07130a;
-  --ground-2: #050e07;
-  --paper: #15281b;
-  --paper-2: #1d3424;
+  --ground: #07120a;
+  --ground-2: #0b1a0f;
+  --paper: #10241a;
+  --paper-2: #173022;
   --ink: #eaf2ea;
-  --ink-soft: #b2c6b7;
+  --ink-soft: #a9c0b0;
   --on-ground: #eaf2ea;
-  --on-ground-soft: #b2c6b7;
+  --on-ground-soft: #a9c0b0;
+  --deep: #0b1d10;
+  --deep-2: #07140b;
+  --on-deep: #eaf2ea;
+  --on-deep-soft: #a9c0b0;
   --accent: #23c062;
   --accent-ink: #062010;
   --coupon: #10522c;
   --coupon-2: #186437;
-  --tint-1: #2f6b45;
-  --tint-2: #3a4a3e;
-  --tint-3: #2c5a3c;
-  --tint-4: #45604c;
+  --line: #1f3a28;
+  --lift: 0 1px 3px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ground: #07130a;
-    --ground-2: #050e07;
-    --paper: #15281b;
-    --paper-2: #1d3424;
+    --ground: #07120a;
+    --ground-2: #0b1a0f;
+    --paper: #10241a;
+    --paper-2: #173022;
     --ink: #eaf2ea;
-    --ink-soft: #b2c6b7;
+    --ink-soft: #a9c0b0;
     --on-ground: #eaf2ea;
-    --on-ground-soft: #b2c6b7;
+    --on-ground-soft: #a9c0b0;
+    --deep: #0b1d10;
+    --deep-2: #07140b;
+    --on-deep: #eaf2ea;
+    --on-deep-soft: #a9c0b0;
     --accent: #23c062;
     --accent-ink: #062010;
     --coupon: #10522c;
     --coupon-2: #186437;
-    --tint-1: #2f6b45;
-    --tint-2: #3a4a3e;
-    --tint-3: #2c5a3c;
-    --tint-4: #45604c;
+    --line: #1f3a28;
+    --lift: 0 1px 3px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -152,10 +161,9 @@ h1, h2, h3 {
 
 .display {
   font-family: var(--display);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
   text-wrap: balance;
 }
 
@@ -199,6 +207,7 @@ h1, h2, h3 {
 
 .ph {
   overflow: hidden;
+  border-radius: var(--r-md);
   background: var(--ground-2);
 }
 
@@ -218,7 +227,7 @@ h1, h2, h3 {
   min-height: 52px;
   padding: 0 26px;
   border: 0;
-  border-radius: 0;
+  border-radius: 999px;
   font: 600 var(--step-body)/1 var(--text);
   white-space: nowrap;
   text-decoration: none;
@@ -381,7 +390,7 @@ h1, h2, h3 {
   width: 46px;
   height: 46px;
   border: 0;
-  border-radius: 0;
+  border-radius: 50%;
   background: rgba(14, 52, 22, 0.55);
   color: #eeede8;
   cursor: pointer;
@@ -411,21 +420,12 @@ h1, h2, h3 {
   display: none;
 }
 
-/* La bolla: carta piena con angoli smussati a punzone, nessun contorno */
+/* Il biglietto di apertura: una scheda bianca che galleggia sulla foto */
 .card {
-  --notch: 22px;
   background: var(--paper);
   color: var(--ink);
-  -webkit-mask:
-    radial-gradient(circle var(--notch) at 0 0, #0000 98%, #000) top left / 51% 51% no-repeat, /* taste-skill-ignore: maschera di ritaglio della forma */
-    radial-gradient(circle var(--notch) at 100% 0, #0000 98%, #000) top right / 51% 51% no-repeat, /* taste-skill-ignore: maschera di ritaglio della forma */
-    radial-gradient(circle var(--notch) at 0 100%, #0000 98%, #000) bottom left / 51% 51% no-repeat, /* taste-skill-ignore: maschera di ritaglio della forma */
-    radial-gradient(circle var(--notch) at 100% 100%, #0000 98%, #000) bottom right / 51% 51% no-repeat; /* taste-skill-ignore: maschera di ritaglio della forma */
-  mask:
-    radial-gradient(circle var(--notch) at 0 0, #0000 98%, #000) top left / 51% 51% no-repeat, /* taste-skill-ignore: maschera di ritaglio della forma */
-    radial-gradient(circle var(--notch) at 100% 0, #0000 98%, #000) top right / 51% 51% no-repeat, /* taste-skill-ignore: maschera di ritaglio della forma */
-    radial-gradient(circle var(--notch) at 0 100%, #0000 98%, #000) bottom left / 51% 51% no-repeat, /* taste-skill-ignore: maschera di ritaglio della forma */
-    radial-gradient(circle var(--notch) at 100% 100%, #0000 98%, #000) bottom right / 51% 51% no-repeat; /* taste-skill-ignore: maschera di ritaglio della forma */
+  border-radius: var(--r-lg);
+  box-shadow: var(--lift);
 }
 
 .waybill {
@@ -438,7 +438,7 @@ h1, h2, h3 {
 }
 
 .waybill h1 {
-  font-size: clamp(3.5rem, 6.4vw - 4px, 6rem);
+  font-size: clamp(2.75rem, 4.4vw, 4.5rem);
 }
 
 .card-lead {
@@ -464,6 +464,7 @@ h1, h2, h3 {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   padding-block: 22px;
+  border-radius: var(--r-md);
   background: var(--paper-2);
 }
 
@@ -516,8 +517,8 @@ h1, h2, h3 {
 
 .facts strong {
   font-family: var(--display);
-  font-weight: 400;
-  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   font-size: var(--step-sub);
   line-height: 0.95;
 }
@@ -559,15 +560,7 @@ h1, h2, h3 {
   background: var(--paper);
   color: var(--ink);
   padding: 72px clamp(24px, 3vw, 48px);
-  --z: 14px;
-  clip-path: polygon(
-    0 var(--z), 5% 0, 10% var(--z), 15% 0, 20% var(--z), 25% 0, 30% var(--z), 35% 0, 40% var(--z), 45% 0, 50% var(--z),
-    55% 0, 60% var(--z), 65% 0, 70% var(--z), 75% 0, 80% var(--z), 85% 0, 90% var(--z), 95% 0, 100% var(--z),
-    100% calc(100% - var(--z)), 95% 100%, 90% calc(100% - var(--z)), 85% 100%, 80% calc(100% - var(--z)), 75% 100%,
-    70% calc(100% - var(--z)), 65% 100%, 60% calc(100% - var(--z)), 55% 100%, 50% calc(100% - var(--z)), 45% 100%,
-    40% calc(100% - var(--z)), 35% 100%, 30% calc(100% - var(--z)), 25% 100%, 20% calc(100% - var(--z)), 15% 100%,
-    10% calc(100% - var(--z)), 5% 100%, 0 calc(100% - var(--z))
-  );
+  border-radius: var(--r-lg);
 }
 
 .menu-title {
@@ -629,7 +622,10 @@ h1, h2, h3 {
    -------------------------------------------------------------------------- */
 .method {
   padding-block: var(--section);
-  background: var(--ground-2);
+  background: var(--deep);
+  color: var(--on-deep);
+  --on-ground: var(--on-deep);
+  --on-ground-soft: var(--on-deep-soft);
 }
 
 .method .grid {
@@ -659,14 +655,7 @@ h1, h2, h3 {
   color: var(--ink);
   padding: 44px clamp(22px, 2.6vw, 40px) 64px;
   font-variant-numeric: tabular-nums;
-  --z: 12px;
-  clip-path: polygon(
-    0 0, 100% 0, 100% calc(100% - var(--z)), 96% 100%, 92% calc(100% - var(--z)), 88% 100%, 84% calc(100% - var(--z)),
-    80% 100%, 76% calc(100% - var(--z)), 72% 100%, 68% calc(100% - var(--z)), 64% 100%, 60% calc(100% - var(--z)),
-    56% 100%, 52% calc(100% - var(--z)), 48% 100%, 44% calc(100% - var(--z)), 40% 100%, 36% calc(100% - var(--z)),
-    32% 100%, 28% calc(100% - var(--z)), 24% 100%, 20% calc(100% - var(--z)), 16% 100%, 12% calc(100% - var(--z)),
-    8% 100%, 4% calc(100% - var(--z)), 0 100%
-  );
+  border-radius: var(--r-lg);
 }
 
 .slip li + li {
@@ -734,6 +723,7 @@ h1, h2, h3 {
   padding: 32px;
   background: rgba(6, 20, 10, 0.72);
   color: #eeede8;
+  border-radius: var(--r-lg);
 }
 
 .software-copy p {
@@ -754,32 +744,27 @@ h1, h2, h3 {
 .out-slip {
   background: var(--paper);
   color: var(--ink);
-  padding: 22px 22px 40px;
+  border-radius: var(--r-md);
+  padding: 22px 22px 28px;
   font-size: var(--step-body);
   line-height: 1.5;
   transition: transform 0.35s var(--ease);
 }
 
-.out-slip:nth-child(1) { min-height: 34svh; transform: rotate(-1.5deg) translateY(10px); }
+.out-slip:nth-child(1) { min-height: 34svh; }
 .out-slip:nth-child(2) { min-height: 42svh; }
-.out-slip:nth-child(3) { min-height: 30svh; transform: rotate(1.2deg) translateY(6px); }
+.out-slip:nth-child(3) { min-height: 30svh; }
 .out-slip:nth-child(4) { min-height: 38svh; }
 
 .out-slip:hover {
-  transform: rotate(0deg) translateY(-8px);
+  transform: translateY(-6px);
 }
 
 .out-slip h3 {
   font-size: var(--step-body);
+  margin-bottom: 8px;
 }
 
-.typed {
-  margin: 8px 0 10px;
-  color: var(--ink-soft);
-  letter-spacing: 0.04em;
-  overflow: hidden;
-  white-space: nowrap;
-}
 
 .out-slip ul {
   margin-top: 8px;
@@ -822,6 +807,8 @@ h1, h2, h3 {
 .tile {
   aspect-ratio: 4 / 5;
   overflow: hidden;
+  border-radius: var(--r-md);
+  background: var(--ground-2);
 }
 
 .tile img {
@@ -829,8 +816,6 @@ h1, h2, h3 {
   height: 100%;
   object-fit: cover;
   object-position: 50% 30%;
-  filter: grayscale(1) contrast(1.15);
-  mix-blend-mode: multiply;
   transition: transform 0.6s var(--ease);
 }
 
@@ -838,10 +823,6 @@ h1, h2, h3 {
   transform: scale(1.04);
 }
 
-.t1 { background: var(--tint-1); }
-.t2 { background: var(--tint-2); }
-.t3 { background: var(--tint-3); }
-.t4 { background: var(--tint-4); }
 
 .member h3 {
   margin-top: 14px;
@@ -879,21 +860,18 @@ h1, h2, h3 {
    -------------------------------------------------------------------------- */
 .proof {
   background: var(--ground-2);
-  padding: 96px var(--m) 0;
-  height: clamp(560px, 50vw, 700px);
-  overflow: hidden;
+  padding: var(--section) var(--m);
   display: flex;
   justify-content: center;
 }
 
 .guest-card {
-  width: min(56vw, 760px);
-  min-height: 1100px;
-  padding: 56px;
+  width: min(64vw, 820px);
+  padding: 48px;
   background: var(--paper);
   color: var(--ink);
   text-align: center;
-  transform: rotate(-1.5deg);
+  border-radius: var(--r-lg);
 }
 
 .guest-title {
@@ -954,7 +932,7 @@ h1, h2, h3 {
   min-height: 48px;
   padding: 0 22px;
   border: 0;
-  border-radius: 0;
+  border-radius: 999px;
   background: var(--ground-2);
   color: var(--on-ground);
   font: 600 var(--step-body) var(--text);
@@ -963,12 +941,13 @@ h1, h2, h3 {
 }
 
 .tab:hover {
-  background: var(--coupon-2);
+  background: var(--paper-2);
 }
 
-.tab[aria-selected="true"] {
+.tab[aria-selected="true"],
+.tab[aria-selected="true"]:hover {
   background: var(--coupon);
-  color: #eeede8;
+  color: #ffffff;
 }
 
 .panel[hidden] {
@@ -976,19 +955,14 @@ h1, h2, h3 {
 }
 
 .coupon {
-  --cut: 46%;
   margin-top: 8px;
   display: grid;
-  grid-template-columns: var(--cut) 1fr;
+  grid-template-columns: 46% 1fr;
   background: var(--coupon);
   color: #eeede8;
   min-height: 520px;
-  -webkit-mask:
-    radial-gradient(circle 14px at var(--cut) 0, #0000 98%, #000) top / 100% 51% no-repeat, /* taste-skill-ignore: maschera di ritaglio della forma */
-    radial-gradient(circle 14px at var(--cut) 100%, #0000 98%, #000) bottom / 100% 51% no-repeat; /* taste-skill-ignore: maschera di ritaglio della forma */
-  mask:
-    radial-gradient(circle 14px at var(--cut) 0, #0000 98%, #000) top / 100% 51% no-repeat, /* taste-skill-ignore: maschera di ritaglio della forma */
-    radial-gradient(circle 14px at var(--cut) 100%, #0000 98%, #000) bottom / 100% 51% no-repeat; /* taste-skill-ignore: maschera di ritaglio della forma */
+  border-radius: var(--r-lg);
+  overflow: hidden;
 }
 
 .coupon-left {
@@ -1042,7 +1016,7 @@ h1, h2, h3 {
   min-height: 52px;
   padding: 14px 16px;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--r-sm);
   background: var(--coupon-2);
   color: #eeede8;
   font: 400 var(--step-body) var(--text);
@@ -1068,13 +1042,13 @@ h1, h2, h3 {
   min-height: 56px;
   width: 100%;
   margin-top: 4px;
-  background: var(--ground);
-  color: #eeede8;
+  background: #ffffff;
+  color: #0e3416;
 }
 
 .btn-submit:hover {
-  background: #eeede8;
-  color: var(--ground);
+  background: #0e3416;
+  color: #ffffff;
 }
 
 .btn:disabled {
@@ -1131,7 +1105,7 @@ h1, h2, h3 {
   position: relative;
   z-index: 0;
   padding: 64px var(--m) var(--m);
-  background: var(--ground-2);
+  background: var(--deep);
   overflow: hidden;
 }
 
@@ -1148,18 +1122,16 @@ h1, h2, h3 {
 }
 
 .back-card {
-  --s: 50px;
   width: calc((100% / 12) * 10);
   margin-inline: auto;
-  min-height: 420px;
-  padding: 88px clamp(24px, 4vw, 64px) 28px;
+  min-height: 360px;
+  padding: 56px clamp(24px, 4vw, 64px) 28px;
   background: var(--paper);
   color: var(--ink);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px 48px;
-  -webkit-mask: radial-gradient(circle calc(var(--s) * 0.5) at 50% 0, #0000 98%, #000) 0 0 / var(--s) 100% repeat-x; /* taste-skill-ignore: maschera di ritaglio della forma */
-  mask: radial-gradient(circle calc(var(--s) * 0.5) at 50% 0, #0000 98%, #000) 0 0 / var(--s) 100% repeat-x; /* taste-skill-ignore: maschera di ritaglio della forma */
+  border-radius: var(--r-lg);
 }
 
 .back-name {
@@ -1252,14 +1224,15 @@ h1, h2, h3 {
   max-width: 860px;
   margin-inline: auto;
   padding: clamp(28px, 5vw, 64px);
+  border-radius: var(--r-lg);
   background: var(--paper);
   color: var(--ink);
 }
 
 .legal h1 {
   font-family: var(--display);
-  font-weight: 400;
-  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 0.95;
   font-size: var(--step-head);
   margin-bottom: 12px;
@@ -1378,10 +1351,7 @@ h1, h2, h3 {
 }
 
 /* i cedolini mantengono la loro inclinazione dopo l'entrata */
-.js .out-slip[data-rise].in:nth-child(1) { transform: rotate(-1.5deg) translateY(10px); }
-.js .out-slip[data-rise].in:nth-child(3) { transform: rotate(1.2deg) translateY(6px); }
-.js .out-slip[data-rise].in:hover { transform: rotate(0deg) translateY(-8px); transition-delay: 0s; }
-.js .guest-card[data-rise].in { transform: rotate(-1.5deg); }
+.js .out-slip[data-rise].in:hover { transform: translateY(-6px); transition-delay: 0s; }
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -1439,8 +1409,6 @@ h1, h2, h3 {
   }
   .coupon {
     grid-template-columns: 1fr;
-    -webkit-mask: none;
-    mask: none;
   }
   .coupon-right {
     border-left: 0;
@@ -1575,14 +1543,9 @@ h1, h2, h3 {
     gap: 28px 8px;
   }
 
-  .proof {
-    padding-top: 72px;
-    height: 640px;
-  }
   .guest-card {
-    width: 92vw;
+    width: 100%;
     padding: 28px 22px;
-    transform: rotate(-1deg);
   }
   .guest-names {
     font-size: var(--step-body);
@@ -1593,8 +1556,6 @@ h1, h2, h3 {
   }
   .coupon {
     grid-template-columns: 1fr;
-    -webkit-mask: none;
-    mask: none;
   }
   .coupon-left,
   .coupon-right {
@@ -1694,24 +1655,23 @@ h1, h2, h3 {
 
 .esito {
   display: inline-block;
-  padding: 6px 14px 5px;
+  padding: 7px 16px;
+  border-radius: 999px;
   font-family: var(--display);
-  font-weight: 400;
-  font-size: var(--step-body);
-  line-height: 1;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-  transform: rotate(-2deg);
+  font-weight: 800;
+  font-size: var(--step-small);
+  line-height: 1.2;
   white-space: nowrap;
 }
 
 .s-ok { background: var(--st-ok); color: var(--st-ok-ink); }
-.s-mar { background: var(--st-mar); color: var(--st-mar-ink); transform: rotate(1.5deg); }
+.s-mar { background: var(--st-mar); color: var(--st-mar-ink); }
 .s-no { background: var(--st-no); color: var(--st-no-ink); }
 
 .status {
   margin-top: 28px;
   padding: 14px 18px;
+  border-radius: var(--r-sm);
   background: var(--ground-2);
   color: var(--on-ground);
   max-width: 62ch;
@@ -1822,12 +1782,13 @@ h1, h2, h3 {
 /* frammento dell'interfaccia: ha le sue regole (righe, pannelli) */
 .ui-frag {
   grid-column: 7 / 13;
-  background: #f7f8f6;
+  background: #ffffff;
   color: #17261d;
   padding: 24px;
   font-size: 15px;
   line-height: 1.45;
-  border-radius: 10px;
+  border-radius: var(--r-lg);
+  box-shadow: var(--lift);
 }
 
 .ui-head {
@@ -2010,7 +1971,7 @@ h1, h2, h3 {
   gap: 6px;
   padding: 18px 16px 20px;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--r-md);
   background: var(--paper-2);
   color: var(--ink);
   font: 400 var(--step-small)/1.45 var(--text);
@@ -2059,8 +2020,8 @@ h1, h2, h3 {
 
 .hw-net-title {
   font-family: var(--display);
-  font-weight: 400;
-  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   font-size: var(--step-sub);
   line-height: 0.95;
 }
@@ -2080,7 +2041,10 @@ h1, h2, h3 {
    22. LA RICERCA SUL VENTO
    -------------------------------------------------------------------------- */
 .research {
-  background: var(--ground-2);
+  background: var(--deep);
+  color: var(--on-deep);
+  --on-ground: var(--on-deep);
+  --on-ground-soft: var(--on-deep-soft);
   padding-top: var(--section);
   overflow: hidden;
 }
