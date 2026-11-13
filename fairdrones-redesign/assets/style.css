@@ -704,83 +704,176 @@ p {
    8. IL SOFTWARE DI VOLO: fotografia e cedolini
    -------------------------------------------------------------------------- */
 .software {
-  position: relative;
-  min-height: 84svh;
-  overflow: hidden;
-  isolation: isolate;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: var(--section) var(--m);
+  background: var(--ground-2);
 }
 
-.software-photo {
+.sw-top {
+  padding-inline: 0;
+  align-items: end;
+  margin-bottom: clamp(32px, 4vw, 56px);
+}
+.sw-top h2 { grid-column: 1 / span 6; }
+.sw-lead {
+  grid-column: 8 / span 5;
+  font-size: var(--step-lead);
+  line-height: 1.4;
+  color: var(--on-ground-soft);
+}
+
+/* un unico pannello: foto dello schermo e funzioni */
+.sw-console {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  background: var(--paper);
+  border-radius: var(--r-lg);
+  box-shadow: var(--lift);
+  overflow: hidden;
+}
+
+.sw-shot {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+}
+.sw-shot img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: 50% 40%;
-  z-index: -2;
+  object-position: 55% 45%;
 }
 
-.software-copy {
-  margin: 120px 0 0 18%;
-  width: min(680px, 64%);
-  padding: 32px;
-  background: rgba(6, 20, 10, 0.72);
-  color: #eeede8;
-  border-radius: var(--r-lg);
+.sw-live {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(6, 20, 10, 0.78);
+  color: #eef3ee;
+  font: 600 var(--step-small) / 1.2 var(--text);
+}
+.sw-live::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #23c062;
+  box-shadow: 0 0 0 0 rgba(35, 192, 98, 0.6);
+  animation: sw-pulse 2s var(--ease) infinite;
+}
+@keyframes sw-pulse {
+  70% { box-shadow: 0 0 0 9px rgba(35, 192, 98, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(35, 192, 98, 0); }
 }
 
-.software-copy p {
-  margin-top: 22px;
-  font-size: var(--step-lead);
-  line-height: 1.35;
-}
-
-.slips {
-  margin-top: 64px;
-  padding-inline: var(--m);
+.sw-list {
+  list-style: none;
+  margin: 0;
+  padding: clamp(8px, 1.5vw, 16px) clamp(24px, 3vw, 44px);
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  align-items: end;
 }
 
-.out-slip {
-  background: var(--paper);
-  color: var(--ink);
-  border-radius: var(--r-md);
-  padding: 22px 22px 28px;
+.sw-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 20px;
+  padding: clamp(22px, 2.4vw, 32px) 0;
+}
+.sw-item + .sw-item { border-top: 1px solid var(--line); }
+
+.sw-num {
+  width: 2.4ch;
+  font: 800 var(--step-small) / 1.6 var(--display);
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.sw-body h3 {
+  font-size: var(--step-lead);
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+.sw-body p {
   font-size: var(--step-body);
   line-height: 1.5;
-  transition: transform 0.35s var(--ease);
+  color: var(--ink-soft);
 }
 
-.out-slip:nth-child(1) { min-height: 34svh; }
-.out-slip:nth-child(2) { min-height: 42svh; }
-.out-slip:nth-child(3) { min-height: 30svh; }
-.out-slip:nth-child(4) { min-height: 38svh; }
-
-.out-slip:hover {
-  transform: translateY(-6px);
+.sw-tags,
+.sw-checks {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sw-tags li,
+.sw-checks li {
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--paper-2);
+  color: var(--ink);
+  font: 600 var(--step-small) / 1.2 var(--text);
+}
+.sw-checks li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.sw-checks li::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.3 2.3 4.7-5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat;
 }
 
-.out-slip h3 {
-  font-size: var(--step-body);
-  margin-bottom: 8px;
-}
-
-
-.out-slip ul {
-  margin-top: 8px;
+.sw-read {
+  margin: 14px 0 0;
   display: grid;
-  gap: 2px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+}
+.sw-read div { padding: 10px 14px; }
+.sw-read div + div { border-left: 1px solid var(--line); }
+.sw-read dt {
+  font-size: var(--step-small);
+  color: var(--ink-soft);
+}
+.sw-read dd {
+  margin: 2px 0 0;
+  white-space: nowrap;
+  font: 800 var(--step-body) / 1.3 var(--display);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
 }
 
-.out-slip li::before {
-  content: "· ";
+@media (max-width: 1080px) {
+  .sw-top h2, .sw-lead { grid-column: 1 / -1; }
+  .sw-lead { margin-top: 16px; }
+  .sw-console { grid-template-columns: minmax(0, 1fr); }
+  .sw-shot { aspect-ratio: 16 / 9; min-height: 0; }
+}
+
+@media (max-width: 560px) {
+  .sw-list { padding: 4px 20px; }
+  .sw-item { gap: 12px; }
+  .sw-read div { padding: 10px 10px; }
+  .sw-live { left: 12px; bottom: 12px; padding: 8px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sw-live::before { animation: none; }
 }
 
 /* --------------------------------------------------------------------------
@@ -1357,8 +1450,6 @@ p {
   transition-delay: calc(var(--i, 0) * 80ms);
 }
 
-/* i cedolini mantengono la loro inclinazione dopo l'entrata */
-.js .out-slip[data-rise].in:hover { transform: translateY(-6px); transition-delay: 0s; }
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -1420,13 +1511,6 @@ p {
   .coupon-right {
     border-left: 0;
     border-top: 5px dotted var(--ground);
-  }
-  .software-copy {
-    margin-left: var(--m);
-    width: min(560px, calc(100% - 2 * var(--m)));
-  }
-  .slips {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .team-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1520,31 +1604,6 @@ p {
     margin-top: 40px;
   }
 
-  .software {
-    min-height: 0;
-  }
-  .software-copy {
-    margin: 72px var(--m) 0;
-    width: auto;
-    padding: 24px;
-  }
-  .slips {
-    margin-top: 40px;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
-  }
-  .out-slip {
-    padding: 20px 20px 28px;
-  }
-  .out-slip:nth-child(even) {
-    margin-left: 12%;
-  }
-  .out-slip:nth-child(odd) {
-    margin-right: 12%;
-  }
-  .out-slip {
-    min-height: 0 !important;
-  }
 
   .team-grid {
     gap: 28px 8px;
