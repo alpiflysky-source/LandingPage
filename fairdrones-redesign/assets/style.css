@@ -51,9 +51,9 @@
   --lift: 0 1px 2px rgba(14, 52, 22, 0.05), 0 12px 32px rgba(14, 52, 22, 0.10);
 
   /* tipografia: cinque gradini */
-  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
-  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
-  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-small: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
   --step-sub: clamp(1.625rem, 1.1rem + 1.6vw, 2.5rem);
   --step-head: clamp(2.25rem, 1.2rem + 3.6vw, 4.25rem);
   --step-display: clamp(2.75rem, 1rem + 5vw, 5rem);
@@ -62,7 +62,7 @@
   --text: 'Inter', system-ui, sans-serif;
 
   /* cornice e ritmo */
-  --m: clamp(16px, 2.2vw, 32px);
+  --m: max(clamp(18px, 3vw, 40px), calc((100vw - 1320px) / 2));
   --gap: clamp(12px, 1.6vw, 24px);
   --section: clamp(64px, 7vw, 108px);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -132,7 +132,8 @@ html {
 body {
   font-family: var(--text);
   font-size: var(--step-body);
-  line-height: 1.55;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
   color: var(--on-ground);
   background: var(--ground);
   -webkit-font-smoothing: antialiased;
@@ -155,8 +156,14 @@ ol {
 }
 
 h1, h2, h3 {
-  font-weight: 600;
-  line-height: 1.15;
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 .display {
@@ -1785,8 +1792,8 @@ h1, h2, h3 {
   background: #ffffff;
   color: #17261d;
   padding: 24px;
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 16px;
+  line-height: 1.5;
   border-radius: var(--r-lg);
   box-shadow: var(--lift);
 }
@@ -1800,12 +1807,12 @@ h1, h2, h3 {
 
 .ui-title {
   font-weight: 600;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .ui-sub {
-  color: #55675b;
-  font-size: 14px;
+  color: #4d6153;
+  font-size: 15px;
 }
 
 .ui-verdict {
@@ -1823,9 +1830,9 @@ h1, h2, h3 {
 }
 
 .ui-axis {
-  color: #55675b;
-  font-size: 13px;
-  margin-bottom: 4px;
+  color: #4d6153;
+  font-size: 15px;
+  margin-bottom: 6px;
 }
 
 .ui-chart svg {
@@ -1835,8 +1842,63 @@ h1, h2, h3 {
 }
 
 .ui-chart text {
-  font: 12px var(--text);
-  fill: #55675b;
+  font: 600 19px var(--text);
+  fill: #4d6153;
+}
+
+.ui-legend {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 15px;
+  color: #4d6153;
+}
+
+.ui-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ui-legend span::before {
+  content: "";
+  flex: none;
+}
+
+.lg-win::before {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background: rgba(15, 132, 66, 0.15);
+}
+
+.lg-lim::before {
+  width: 18px;
+  height: 2px;
+  background: #17261d;
+}
+
+.lg-mar::before {
+  width: 18px;
+  border-top: 2px dashed #b78612; /* taste-skill-ignore: legenda di un grafico vero (data-ui) */
+}
+
+.ui-chart .chart-phone {
+  display: none;
+}
+
+.ui-chart .chart-phone text {
+  font-size: 17px;
+}
+
+@media (max-width: 760px) {
+  .ui-chart .chart-wide {
+    display: none;
+  }
+  .ui-chart .chart-phone {
+    display: block;
+  }
 }
 
 .ui-chart .b-ok { fill: #0f8442; }
@@ -1851,8 +1913,8 @@ h1, h2, h3 {
 .ui-reasons {
   margin-top: 12px;
   display: grid;
-  gap: 4px;
-  font-size: 14px;
+  gap: 6px;
+  font-size: 15px;
 }
 
 .ui-reasons li {
@@ -1872,8 +1934,8 @@ h1, h2, h3 {
 
 .ui-frag figcaption {
   margin-top: 14px;
-  font-size: 13px;
-  color: #55675b;
+  font-size: 15px;
+  color: #4d6153;
 }
 
 /* --------------------------------------------------------------------------
@@ -2016,7 +2078,14 @@ h1, h2, h3 {
 .hw-net-map .m-hub { fill: var(--ink); }
 .hw-net-map .m-valley { fill: var(--accent); }
 .hw-net-map .m-pad { fill: var(--paper); stroke: var(--ink); stroke-width: 3; }
-.hw-net-map text { font: 600 14px var(--text); fill: var(--ink); }
+.hw-net-map text {
+  font: 600 20px var(--text);
+  fill: var(--ink);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 6px;
+  stroke-linejoin: round;
+}
 
 .hw-net-title {
   font-family: var(--display);
