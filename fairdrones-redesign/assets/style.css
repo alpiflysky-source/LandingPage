@@ -446,7 +446,7 @@ p {
 }
 
 .waybill h1 {
-  font-size: clamp(2.75rem, 4.4vw, 4.5rem);
+  font-size: clamp(2.5rem, 4vw, 4.25rem);
 }
 
 .card-lead {
@@ -1553,7 +1553,7 @@ p {
     padding: 44px 22px 48px;
   }
   .waybill h1 {
-    font-size: 14.5vw;
+    font-size: 11vw;
   }
   .waybill-fields {
     grid-template-columns: 1fr;
@@ -2413,7 +2413,7 @@ p {
 .roadmap ol { display: grid; }
 .roadmap li {
   display: grid;
-  grid-template-columns: 9.5em minmax(0, 1fr);
+  grid-template-columns: 8em minmax(0, 1fr);
   gap: 16px;
   padding: 16px 0;
   border-top: 1px solid var(--line);
@@ -2472,4 +2472,25 @@ p {
   .uses { grid-template-columns: minmax(0, 1fr); }
   .roadmap li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
   .tab { padding: 0 16px; }
+}
+
+/* barra in alto su telefono: cambio lingua compatto */
+@media (max-width: 760px) {
+  .topactions { gap: 6px; }
+  .lang { gap: 0; }
+  .lang span,
+  .lang a[aria-current="page"] { display: none; }
+  .lang a { min-width: 40px; min-height: 40px; opacity: 1; }
+  #theme-toggle { width: 42px; height: 42px; }
+  .nav-cta { padding: 0 16px; }
+}
+@media (max-width: 400px) {
+  .wordmark-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
 }
