@@ -1,0 +1,4 @@
+# Area riservata (demo, app del rifugio, login): l'applicazione gira su Render.
+# Per cambiare indirizzo (es. https://app.fairdrones.it/demo/) si modifica solo questa riga.
+# Funziona sia con il deploy da git sia caricando la cartella a mano su Netlify. 302: non resta in cache.
+/area-riservata    https://fairdrones-demo.onrender.com/demo/    302!
