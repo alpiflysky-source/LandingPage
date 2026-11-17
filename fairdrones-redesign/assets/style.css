@@ -2278,9 +2278,6 @@ p {
   .hw-blocks {
     grid-template-columns: 1fr;
   }
-  .hw-states .esito {
-    font-size: var(--step-body);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
