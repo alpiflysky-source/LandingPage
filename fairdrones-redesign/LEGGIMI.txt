@@ -2,16 +2,19 @@ FAIRDRONES — NUOVO SITO
 =======================
 
 CONTENUTO DELLA CARTELLA
-  index.html            Homepage: apertura, progetto, punti di forza, metodo,
-                        software di volo, come decide il software, Fairbox, ricerca sul vento,
-                        team, riconoscimenti, contatti
+  index.html            Homepage in italiano: apertura, progetto, ecosistema, punti di forza,
+                        metodo, software di volo, come decide il software, Fairbox, ricerca
+                        sul vento, oltre i rifugi e stato del progetto, team, con chi
+                        lavoriamo, contatti
   grazie.html           Pagina "Messaggio inviato" (usata solo se il browser ha JavaScript disattivato)
+  en/index.html         Versione inglese completa della homepage (https://fairdrones.it/en/)
+  en/thank-you.html     Pagina "Message sent" in inglese
+  _redirects            Indirizzo dell'area riservata (/area-riservata)
   privacy-policy.html   Informativa privacy (GDPR, artt. 13-14)
   cookie-policy.html    Informativa cookie
   assets/style.css      Tutto lo stile del sito
   assets/fonts/         Font Manrope e Inter (in locale, niente Google Fonts)
-  assets/img/           Logo, foto del team, immagini e render della scheda Fairbox
-                        (fairbox-full.webp e fairbox-b1...b5.webp, ricavati dal modello 3D)
+  assets/img/           Logo, foto del team e immagini del sito
 
   Fuori dalla cartella, nella radice del repository:
   netlify.toml          Dice a Netlify di pubblicare la cartella fairdrones-redesign
@@ -32,13 +35,13 @@ PRIMA DI PUBBLICARE
   3. Instagram: tutti i link del footer puntano al profilo
      https://www.instagram.com/fairdrones
   4. Configura i moduli contatti su Netlify (sezione seguente).
-  6. Contenuti da confermare nella homepage:
-     - il riquadro "Valutazione della missione" mostra dati di esempio
-       (rifugio fittizio, meteo simulato);
-     - verificate che si possano citare pubblicamente Politecnico di Milano,
-       DJI FlyCart 100, i "100 test" e la prova dei 360 messaggi.
+  6. Contenuti da confermare nella homepage: vedi la sezione
+     SEGNAPOSTO DA CONFERMARE qui sotto. Inoltre il riquadro "Valutazione
+     della missione" mostra dati di esempio (rifugio fittizio, meteo simulato)
+     e la sezione software mostra valori di telemetria d'esempio.
   5. Le immagini delle schede e della hero vengono da Unsplash (licenza
-     gratuita, uso commerciale consentito).
+     gratuita, uso commerciale consentito). Verificate il diritto d'uso delle
+     foto dei droni (FlyCart) e sostituitele con foto vostre appena le avete.
 
 
 MODULI CONTATTI (NETLIFY FORMS)
@@ -57,12 +60,26 @@ COME FUNZIONA
        inoltra per email a info@fairdrones.it (notifica da impostare una volta
        sola, vedi punto C).
 
-  I moduli registrati sono due:
-    contatto-rifugi    campi: tipo, nome, rifugio, email, messaggio
-    contatto-aziende   campi: tipo, nome, azienda, email, messaggio
+  I moduli registrati sono tre (stessi nomi nella versione italiana e in
+  quella inglese):
+    contatto-rifugi      campi: tipo, lingua, nome, rifugio, email, messaggio
+    contatto-operatori   campi: tipo, lingua, nome, azienda, email, mezzi,
+                         stato, messaggio
+    contatto-aziende     campi: tipo, lingua, nome, azienda, email, messaggio
+                         (scheda "Enti e aziende")
+  Il campo "lingua" vale IT o EN: dice da quale versione del sito arriva il
+  messaggio, cosi' sapete in che lingua rispondere.
   Oggetto dell'email ricevuta:
     "Nuova richiesta dal sito FairDrones — Rifugio"
-    "Nuova proposta dal sito FairDrones — Azienda"
+    "Nuovo operatore dal sito FairDrones"
+    "Nuova proposta dal sito FairDrones — Ente o azienda"
+    (dalla versione inglese gli oggetti sono in inglese)
+
+  IMPORTANTE, NUOVO MODULO: dopo aver caricato questa versione rifate il
+  deploy e controllate in Forms che compaiano TUTTI E TRE i moduli
+  (contatto-rifugi, contatto-operatori, contatto-aziende). Netlify registra
+  un modulo nuovo solo durante un deploy. La notifica email deve essere su
+  "Any form", altrimenti i messaggi degli operatori non arrivano.
 
 CONFIGURAZIONE (UNA VOLTA SOLA)
   A. Pubblica il sito su Netlify, in uno di questi due modi:
@@ -79,7 +96,8 @@ CONFIGURAZIONE (UNA VOLTA SOLA)
      Poi RIFAI IL DEPLOY (Deploys > Trigger deploy > Deploy site, oppure
      trascina di nuovo la cartella). Netlify cerca i moduli solo durante un
      deploy: se salti questo passaggio gli invii vanno in errore.
-     Verifica: in "Forms" devono comparire contatto-rifugi e contatto-aziende.
+     Verifica: in "Forms" devono comparire contatto-rifugi, contatto-operatori
+     e contatto-aziende.
 
   C. Imposta l'email di notifica:
      Project configuration > Notifications > Emails and webhooks >
@@ -92,7 +110,9 @@ CONFIGURAZIONE (UNA VOLTA SOLA)
   D. Fai una prova dal sito pubblicato (non dal file sul computer):
      compila "Per rifugi" con la tua email e invia. Devi vedere il messaggio
      verde di conferma, il messaggio in Forms > contatto-rifugi e, dopo
-     qualche minuto, l'email in info@fairdrones.it. Ripeti con "Per aziende".
+     qualche minuto, l'email in info@fairdrones.it. Ripeti con "Per operatori"
+     e "Enti e aziende", poi rifai le tre prove dalla versione inglese
+     (https://fairdrones.it/en/).
 
 SE L'EMAIL NON ARRIVA
   - Il messaggio e' in Forms ma l'email no: controlla la cartella Spam di
@@ -115,7 +135,11 @@ COMPORTAMENTI PREVISTI
   - Aprendo index.html con doppio clic dal computer l'invio non parte e
     compare un avviso: e' normale, funziona solo sul sito pubblicato.
   - Browser con JavaScript disattivato: il modulo viene inviato in modo
-    classico e Netlify mostra la pagina grazie.html.
+    classico e Netlify mostra la pagina grazie.html (en/thank-you.html dalla
+    versione inglese).
+  - I link "Sei un operatore? Parliamone" e simili aprono direttamente la
+    scheda giusta dei contatti (indirizzi #contatti-rifugi,
+    #contatti-operatori, #contatti-enti).
   - Antispam: c'e' un campo nascosto "trappola" (bot-field) che i visitatori
     non vedono; inoltre Netlify filtra lo spam in automatico.
 
@@ -135,6 +159,38 @@ COME MODIFICARE I MODULI
     un attributo name (es. name="telefono") e rifai il deploy: Netlify lo
     registra al deploy successivo. Non rinominare i campi esistenti ne'
     i nomi dei moduli (contatto-rifugi, contatto-aziende).
+
+
+SEGNAPOSTO DA CONFERMARE
+========================
+Alcuni testi sono gia' nella pagina ma NASCOSTI finche' il team non li
+conferma. Nel codice sono preceduti da un commento <!-- DA CONFERMARE: ... -->.
+Cercate "DA CONFERMARE" in index.html e in en/index.html (vanno cambiati
+in entrambi i file).
+Per pubblicare un testo: togliete l'attributo hidden dall'elemento sotto il
+commento (es. <p hidden> diventa <p>) e, se il commento lo dice, cancellate
+la riga di riserva. Poi cancellate il commento.
+
+  - Numeri in evidenza: dato sulla sostenibilita' ("fino a 15 volte") tolto
+    finche' non c'e' una fonte con il metodo di calcolo.
+  - Come decide il software: "demo online, in prova con un operatore
+    partner" (oggi e' visibile solo "demo online").
+  - Stato del progetto: riga "Stagione 2027 - Servizio pilota in Val Codera
+    con un operatore partner" (nome della valle e formulazione).
+  - Con chi lavoriamo, riga dei nomi: AF Drones, eV-Now, Politecnico di
+    Milano.
+  - Con chi lavoriamo, note: "Operatori" (AF Drones, base vicino a Edolo),
+    "Territorio" (eV-Now), "Rifugi" ([N] rifugi partner in Val Codera: va
+    scritto il numero al posto di [N]), "Ricerca" (Politecnico di Milano).
+
+
+FAIRBOX: QUANTO DETTAGLIO
+=========================
+Sul sito la Fairbox e' descritta solo come funzione (nodo sulla piazzola,
+stati Consegna OK / Attendere / Annullare). Render della scheda, misure,
+blocchi interni e componenti del kit di piazzola sono stati tolti di
+proposito: il messaggio principale e' la rete di stazioni, i dettagli
+tecnici si mostrano nelle call.
 
 
 NOTA

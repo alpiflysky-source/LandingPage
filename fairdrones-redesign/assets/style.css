@@ -446,7 +446,7 @@ p {
 }
 
 .waybill h1 {
-  font-size: clamp(2.75rem, 4.4vw, 4.5rem);
+  font-size: clamp(2.5rem, 4vw, 4.25rem);
 }
 
 .card-lead {
@@ -1553,7 +1553,7 @@ p {
     padding: 44px 22px 48px;
   }
   .waybill h1 {
-    font-size: 14.5vw;
+    font-size: 11vw;
   }
   .waybill-fields {
     grid-template-columns: 1fr;
@@ -2027,33 +2027,33 @@ p {
 }
 
 .hw-main {
-  margin-top: 56px;
+  margin-top: clamp(56px, 6vw, 96px);
   align-items: center;
   row-gap: 32px;
 }
 
-.hw-figure {
-  grid-column: 1 / 9;
+.hw-status {
+  margin: clamp(32px, 4vw, 56px) var(--m) 0;
 }
 
-.hw-figure img {
-  width: 100%;
-  transition: opacity 0.16s ease;
-}
-
-.hw-figure img.swap {
-  opacity: 0.2;
-}
-
-.hw-figure figcaption {
-  margin-top: 8px;
-  font-size: var(--step-small);
-  color: var(--ink-soft);
-  min-height: 3em;
+.hw-node {
+  grid-column: 1 / 7;
 }
 
 .hw-side {
-  grid-column: 9 / 13;
+  grid-column: 8 / 13;
+}
+
+.hw-node-title {
+  font-size: var(--step-sub);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.hw-node-text {
+  max-width: 44ch;
+  font-size: var(--step-lead);
+  line-height: 1.4;
 }
 
 .hw-states-title {
@@ -2077,58 +2077,19 @@ p {
   max-width: 40ch;
 }
 
-.hw-blocks {
-  margin-top: 40px;
-  padding-inline: var(--m);
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.hw-blocks button {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  align-content: start;
-  gap: 6px;
-  padding: 18px 16px 20px;
-  border: 0;
-  border-radius: var(--r-md);
-  background: var(--paper-2);
-  color: var(--ink);
-  font: 400 var(--step-small)/1.45 var(--text);
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s var(--ease);
-}
-
-.hw-blocks strong {
-  font-size: var(--step-body);
-  line-height: 1.25;
-}
-
-.hw-blocks button:hover {
-  transform: translateY(-3px);
-}
-
-.hw-blocks button[aria-pressed="true"] {
-  background: var(--ink);
-  color: var(--paper);
-}
-
 .hw-net {
-  margin-top: 72px;
+  margin-top: clamp(32px, 4vw, 56px);
   row-gap: 24px;
+  align-items: center;
 }
 
 .hw-net-left {
-  grid-column: 1 / 6;
+  grid-column: 1 / 7;
 }
 
 .hw-net-map {
-  margin-top: 28px;
   width: 100%;
-  max-width: 460px;
+  max-width: 540px;
   height: auto;
   display: block;
 }
@@ -2147,23 +2108,10 @@ p {
   stroke-linejoin: round;
 }
 
-.hw-net-title {
-  font-family: var(--display);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  font-size: var(--step-sub);
-  line-height: 0.95;
-}
-
 .hw-net-list {
-  grid-column: 6 / 13;
+  grid-column: 8 / 13;
   display: grid;
   gap: 16px;
-}
-
-.hw-net .status {
-  grid-column: 6 / 13;
-  margin-top: 8px;
 }
 
 /* --------------------------------------------------------------------------
@@ -2245,18 +2193,10 @@ p {
   }
   .hw-top h2,
   .hw-lead,
-  .hw-figure,
+  .hw-node,
   .hw-side,
   .hw-net-left,
-  .hw-net-title,
-  .hw-net-list,
-  .hw-net .status {
-    grid-column: 1 / -1;
-  }
-  .hw-blocks {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .hw-blocks li:last-child {
+  .hw-net-list {
     grid-column: 1 / -1;
   }
 }
@@ -2275,13 +2215,219 @@ p {
     align-items: flex-start;
     gap: 10px;
   }
-  .hw-blocks {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .r-wind {
     animation: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   23. CAMBIO LINGUA
+   -------------------------------------------------------------------------- */
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 600 var(--step-small) / 1 var(--text);
+}
+.lang a {
+  display: inline-grid;
+  place-items: center;
+  min-width: 34px;
+  min-height: 34px;
+  border-radius: 999px;
+  text-decoration: none;
+  opacity: 0.72;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+.lang a:hover { opacity: 1; }
+.lang a[aria-current="page"] {
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+.lang span { opacity: 0.5; }
+
+/* --------------------------------------------------------------------------
+   24. ECOSISTEMA: tre attori, una infrastruttura
+   -------------------------------------------------------------------------- */
+.eco {
+  padding-block: calc(var(--section) * 0.4) calc(var(--section) * 0.6);
+}
+.eco-top { align-items: end; }
+.eco-top h2 { grid-column: 1 / 8; }
+.eco-lead {
+  grid-column: 8 / 13;
+  font-size: var(--step-lead);
+  line-height: 1.4;
+  color: var(--on-ground-soft);
+}
+.eco-grid {
+  margin-top: clamp(32px, 4vw, 56px);
+  padding-inline: var(--m);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+}
+.eco-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(24px, 2.6vw, 36px);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: var(--r-lg);
+}
+.eco-card-key {
+  background: var(--deep);
+  color: var(--on-deep);
+}
+.eco-num {
+  font: 800 var(--step-small) / 1.6 var(--display);
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+.eco-card-key .eco-num { color: #6fd39a; }
+.eco-card h3 { font-size: var(--step-lead); line-height: 1.25; }
+.eco-card p {
+  font-size: var(--step-body);
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.eco-card-key p { color: var(--on-deep-soft); }
+.eco-card .textlink {
+  margin-top: auto;
+  padding-top: 8px;
+  align-self: flex-start;
+}
+.eco-card-key .textlink:hover { color: #6fd39a; }
+
+/* --------------------------------------------------------------------------
+   25. FAIRBOX: la riga "indipendente dal drone"
+   -------------------------------------------------------------------------- */
+.hw-net-key {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+/* --------------------------------------------------------------------------
+   26. OLTRE I RIFUGI E STATO DEL PROGETTO
+   -------------------------------------------------------------------------- */
+.next {
+  padding-block: var(--section) calc(var(--section) * 0.4);
+}
+.next .grid { align-items: start; }
+.next-uses { grid-column: 1 / 7; }
+.uses {
+  margin-top: clamp(28px, 3vw, 44px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--gap);
+}
+.uses li {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  font: 800 clamp(1.25rem, 1.05rem + 0.6vw, 1.625rem) / 1.2 var(--display);
+  letter-spacing: -0.01em;
+}
+.next-note {
+  margin-top: 20px;
+  max-width: 44ch;
+  font-size: var(--step-body);
+  color: var(--on-ground-soft);
+}
+.roadmap {
+  grid-column: 8 / 13;
+  padding-bottom: 44px;
+}
+.roadmap .roadmap-title {
+  font-size: var(--step-lead);
+  margin-bottom: 24px;
+}
+.roadmap ol { display: grid; }
+.roadmap li {
+  display: grid;
+  grid-template-columns: 8em minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  margin: 0 !important;
+}
+.roadmap li[hidden] { display: none; }
+.roadmap-when {
+  font-weight: 700;
+  color: var(--ink);
+}
+.roadmap li p:last-child { color: var(--ink-soft); }
+
+/* --------------------------------------------------------------------------
+   27. CONTATTI: ancore dei tab e menu a tendina
+   -------------------------------------------------------------------------- */
+.tab-anchor {
+  display: block;
+  scroll-margin-top: 16px;
+}
+.tablist { flex-wrap: wrap; }
+
+.coupon-right select {
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 44px 14px 16px;
+  border: 0;
+  border-radius: var(--r-sm);
+  background: var(--coupon-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%23eeede8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") right 16px center / 16px no-repeat;
+  color: #eeede8;
+  font: 400 var(--step-body) var(--text);
+  appearance: none;
+  cursor: pointer;
+}
+.coupon-right select:focus {
+  outline: 3px solid #eeede8;
+  outline-offset: 0;
+}
+.coupon-right select option {
+  background: #ffffff;
+  color: #0e3416;
+}
+
+@media (max-width: 1240px) {
+  .nav-optional { display: none; }
+}
+
+@media (max-width: 1100px) {
+  .eco-top h2, .eco-lead { grid-column: 1 / -1; }
+  .eco-lead { margin-top: 16px; }
+  .eco-grid { grid-template-columns: minmax(0, 1fr); }
+  .next-uses, .roadmap { grid-column: 1 / -1; }
+  .roadmap { margin-top: 40px; }
+}
+
+@media (max-width: 560px) {
+  .uses { grid-template-columns: minmax(0, 1fr); }
+  .roadmap li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .tab { padding: 0 16px; }
+}
+
+/* barra in alto su telefono: cambio lingua compatto */
+@media (max-width: 760px) {
+  .topactions { gap: 6px; }
+  .lang { gap: 0; }
+  .lang span,
+  .lang a[aria-current="page"] { display: none; }
+  .lang a { min-width: 40px; min-height: 40px; opacity: 1; }
+  #theme-toggle { width: 42px; height: 42px; }
+  .nav-cta { padding: 0 16px; }
+}
+@media (max-width: 400px) {
+  .wordmark-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 }
