@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FairDrones · Infrastructure for cargo drones in the mountains</title>
+<meta name="description" content="FairDrones connects mountain huts, drone operators and local communities: valley weather data, safe landing pads and mission planning, so that cargo drones can fly where today only the helicopter can reach.">
+<link rel="canonical" href="https://fairdrones.it/en/">
+<link rel="alternate" hreflang="it" href="https://fairdrones.it/">
+<link rel="alternate" hreflang="en" href="https://fairdrones.it/en/">
+<link rel="alternate" hreflang="x-default" href="https://fairdrones.it/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FairDrones">
+<meta property="og:title" content="FairDrones · Infrastructure for cargo drones in the mountains">
+<meta property="og:description" content="Valley weather data, safe landing pads and mission planning: the infrastructure that lets cargo drones reach places that today only the helicopter can reach.">
+<meta property="og:url" content="https://fairdrones.it/en/">
+<meta property="og:image" content="https://fairdrones.it/assets/img/flycart-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="657">
+<meta property="og:image:alt" content="Two cargo drones flying over snow-covered mountains">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FairDrones · Infrastructure for cargo drones in the mountains">
+<meta name="twitter:description" content="Valley weather data, safe landing pads and mission planning: the infrastructure that lets cargo drones reach places that today only the helicopter can reach.">
+<meta name="twitter:image" content="https://fairdrones.it/assets/img/flycart-1200.jpg">
+<link rel="icon" href="../assets/img/logo.png">
+<link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  // Applica il tema salvato prima del rendering (evita il flash)
+  try { const t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  document.documentElement.classList.add('js');
+</script>
+</head>
+<body>
+
+<main class="sheet-stack">
+
+  <!-- HERO: la bolla di consegna appoggiata sulla fotografia -->
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero-photo" src="../assets/img/flycart-2400.jpg" srcset="../assets/img/flycart-1200.jpg 1200w, ../assets/img/flycart-2400.jpg 2400w" sizes="100vw" width="2400" height="1314" alt="Two cargo drones flying over snow-covered mountains, one carrying a slung load">
+
+    <header class="topbar">
+      <a href="#" class="wordmark"><img src="../assets/img/logo.png" alt="" width="34" height="34"><span class="wordmark-name">FairDrones</span></a>
+      <nav class="toplinks" aria-label="Sections">
+        <a href="#ecosistema">Ecosystem</a>
+        <a href="#metodo" class="nav-optional">Method</a>
+        <a href="#come-decide">Software</a>
+        <a href="#fairbox">Fairbox</a>
+        <a href="#team">Team</a>
+        <a href="/area-riservata">Reserved area</a>
+      </nav>
+      <div class="topactions">
+        <nav class="lang" aria-label="Language">
+          <a href="../" lang="it" hreflang="it" aria-label="Italiano">IT</a><span aria-hidden="true">·</span><a href="./" lang="en" aria-current="page" aria-label="English">EN</a>
+        </nav>
+        <button id="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#contatti" class="btn btn-ink nav-cta" aria-label="Work with us"><span class="cta-long" aria-hidden="true">Work with us</span><span class="cta-short" aria-hidden="true">Contact</span></a>
+      </div>
+    </header>
+
+    <article class="card waybill">
+      <h1 id="hero-title" class="display" data-rise>The infrastructure<br> for flying in the mountains</h1>
+      <p class="card-lead" data-rise>Valley weather data, safe landing pads and mission planning: we make it possible for cargo drones to reach places that today only the helicopter can reach. We are starting with Alpine mountain huts.</p>
+      <p class="card-actions" data-rise>
+        <a href="#contatti" class="btn btn-accent">Work with us</a>
+        <a href="#ecosistema" class="textlink">Explore the ecosystem</a>
+      </p>
+
+      <dl class="waybill-fields" data-rise>
+        <div><dt>For</dt><dd>Mountain huts · Drone operators · Local communities</dd></div>
+        <div><dt>First use case</dt><dd>Resupplying mountain huts</dd></div>
+        <div><dt>Drones</dt><dd>Any make</dd></div>
+      </dl>
+
+    </article>
+  </section>
+
+  <!-- IL PROGETTO: titolo, nota, riga di fatti -->
+  <section class="intro" id="progetto" aria-labelledby="progetto-title">
+    <div class="grid intro-top">
+      <h2 id="progetto-title" class="display head" data-rise>Logistics where<br> the road ends</h2>
+      <div class="intro-note" data-rise>
+        <p>In the mountains the constraint is not the drone but everything missing around it: valley weather data, verified landing pads, a reliable connection, planned missions and someone to request them. FairDrones builds this infrastructure and makes it available to drone operators.</p>
+      </div>
+    </div>
+    <ul class="facts" data-rise>
+      <li><strong>Multi-operator</strong><span>drones of any make</span></li>
+      <li><strong>Combined missions</strong><span>several requests, one flight</span></li>
+      <li><strong>Valley data</strong><span>weather measured where the drones fly</span></li>
+      <li><strong>TEF Ignition</strong><span>selected for the programme</span></li>
+      <!-- DA CONFERMARE: dato sostenibilità, serve fonte e metodo prima di ripubblicarlo (TO BE CONFIRMED: sustainability figure, needs source and method before republishing) -->
+    </ul>
+    <div class="grid intro-photos">
+      <figure class="ph ph-a" data-rise><img src="../assets/img/IMG-20261015-WA0004.jpg" width="1200" height="838" alt="Drone flying at sunset over a mountain plateau" loading="lazy"></figure>
+      <figure class="ph ph-b" data-rise><img src="../assets/img/IMG-20261015-WA0005.jpg" width="800" height="533" alt="Drone operator preparing a cargo drone before take-off" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- ECOSISTEMA: chi partecipa e cosa ottiene -->
+  <section class="eco" id="ecosistema" aria-labelledby="eco-title">
+    <div class="grid eco-top">
+      <h2 id="eco-title" class="display head" data-rise>One infrastructure,<br> three players</h2>
+      <p class="eco-lead" data-rise>Each does what it does best. FairDrones connects them.</p>
+    </div>
+    <ul class="eco-grid">
+      <li class="eco-card" data-rise>
+        <span class="eco-num" aria-hidden="true">01</span>
+        <h3>Mountain huts and high-altitude communities</h3>
+        <p>They request a resupply in a few steps and know straight away whether and when a flight will be possible. Smaller, more frequent deliveries, alongside the helicopter.</p>
+        <a href="#contatti-rifugi" class="textlink">Run a mountain hut? Write to us</a>
+      </li>
+      <li class="eco-card eco-card-key" data-rise>
+        <span class="eco-num" aria-hidden="true">02</span>
+        <h3>Drone operators</h3>
+        <p>They find requests already collected and grouped into missions, flight windows calculated from valley data, equipped landing pads, and technical and regulatory support for operating in complex environments. They can focus on flying.</p>
+        <a href="#contatti-operatori" class="textlink">Are you a drone operator? Let's talk</a>
+      </li>
+      <li class="eco-card" data-rise>
+        <span class="eco-num" aria-hidden="true">03</span>
+        <h3>Public bodies and local communities</h3>
+        <p>Municipalities, mountain communities, parks and competence centres gain valley weather data that is useful beyond drones, and a replicable model for bringing services to remote areas.</p>
+        <a href="#contatti-enti" class="textlink">Work with us</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- PUNTI DI FORZA: il listino -->
+  <section class="strengths" aria-labelledby="forza-title">
+    <div class="grid">
+      <div class="menu-sheet" data-rise>
+        <h2 id="forza-title" class="display menu-title">Strengths</h2>
+        <div class="menu-group">
+          <h3>Safety</h3>
+          <p class="menu-row"><span class="menu-name">More flying days, with clear margins</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-val">at altitude</span></p>
+          <p class="menu-desc">Weather measured in the valley and checks at the landing pad show when a flight is possible, and when it is not.</p>
+        </div>
+        <div class="menu-group">
+          <h3>Efficiency</h3>
+          <p class="menu-row"><span class="menu-name">Combined, efficient missions</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-val">one flight</span></p>
+          <p class="menu-desc">The software combines several requests into a single flight mission.</p>
+        </div>
+        <div class="menu-group">
+          <h3>Sustainability</h3>
+          <p class="menu-row"><span class="menu-name">Electric, low-noise deliveries</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-val">electric</span></p>
+          <p class="menu-desc">Battery-powered drones for small, frequent loads, and fewer helicopter flights, kept for the heavy ones.</p>
+        </div>
+        <div class="menu-group">
+          <h3>Alongside the helicopter</h3>
+          <table class="versus">
+            <thead><tr><th scope="col"></th><th scope="col">Helicopter</th><th scope="col">Cargo drone</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Loads</th><td>Large, infrequent</td><td>Small, when needed</td></tr>
+              <tr><th scope="row">Energy</th><td>Fuel</td><td>Electric</td></tr>
+              <tr><th scope="row">Crew</th><td>On board</td><td>Remote pilot on the ground</td></tr>
+              <tr><th scope="row">Noise</th><td>Loud</td><td>Quieter</td></tr>
+            </tbody>
+          </table>
+          <p class="menu-desc">It does not replace the helicopter, which remains essential for heavy loads and rescue.</p>
+        </div>
+      </div>
+      <figure class="ph strengths-photo" data-rise><img src="../assets/img/hero.jpg" width="2000" height="1333" alt="Drone flying in front of a mountain range" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- IL METODO: l'itinerario di una consegna sul foglietto -->
+  <section class="method" id="metodo" aria-labelledby="metodo-title">
+    <div class="grid">
+      <div class="method-text">
+        <h2 id="metodo-title" class="display head" data-rise>From request<br> to delivery</h2>
+        <p class="method-lead" data-rise>Three steps, from request to delivery. The flying is always done by an authorised drone operator.</p>
+        <figure class="ph method-photo" data-rise><img src="../assets/img/tab-efficienza.jpg" width="1400" height="788" alt="Drone ready for take-off on a landing pad in a mountain meadow" loading="lazy"></figure>
+      </div>
+      <ol class="slip" data-rise>
+        <li>
+          <h3>Request and planning</h3>
+          <p class="slip-row"><span>The mountain hut chooses the day, the weight in kg and the time slot</span><span class="menu-dots" aria-hidden="true"></span><span class="slip-val">days ahead</span></p>
+          <p class="slip-row"><span>The software replies whether a flight is possible, and when</span><span class="menu-dots" aria-hidden="true"></span><span class="slip-val">immediately</span></p>
+        </li>
+        <li>
+          <h3>Mission optimisation</h3>
+          <p class="slip-row"><span>Nearby requests become a single mission</span><span class="menu-dots" aria-hidden="true"></span><span class="slip-val">the day before</span></p>
+          <p class="slip-row"><span>Route flyable and landing pad clear: take-off</span><span class="menu-dots" aria-hidden="true"></span><span class="slip-val">5 min before</span></p>
+        </li>
+        <li>
+          <h3>Delivery at destination</h3>
+          <p class="slip-row"><span>A signal alerts anyone nearby</span><span class="menu-dots" aria-hidden="true"></span><span class="slip-val">2 min before arrival</span></p>
+          <p class="slip-row"><span>If someone enters the area, the descent stops</span><span class="menu-dots" aria-hidden="true"></span><span class="slip-val">during descent</span></p>
+        </li>
+        <li class="slip-total"><span>From request to delivery</span><span>three steps</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- IL SOFTWARE DI VOLO: i cedolini lungo il bordo -->
+  <section class="software" id="software" aria-labelledby="software-title">
+    <div class="grid sw-top">
+      <h2 id="software-title" class="display head" data-rise>The flight<br> software</h2>
+      <p class="sw-lead" data-rise>The software brings together in a single tool what is needed to decide on a flight at altitude: weather, route, payload and landing pad status. Designed for drone operators, simple for mountain huts.</p>
+    </div>
+    <div class="sw-console" data-rise>
+      <figure class="sw-shot">
+        <img src="../assets/img/IMG-20261015-WA0006.jpg" width="1280" height="720" alt="Hands holding a drone remote controller with the flight route on the screen" loading="lazy">
+        <span class="sw-live" aria-hidden="true">Mission in progress</span>
+      </figure>
+      <ol class="sw-list">
+        <li class="sw-item">
+          <span class="sw-num" aria-hidden="true">01</span>
+          <div class="sw-body">
+            <h3>Flight plan</h3>
+            <p>Optimises the operational plan based on:</p>
+            <ul class="sw-tags"><li>the route</li><li>weather conditions</li><li>payload weight</li></ul>
+          </div>
+        </li>
+        <li class="sw-item">
+          <span class="sw-num" aria-hidden="true">02</span>
+          <div class="sw-body">
+            <h3>Telemetry</h3>
+            <p>All flight data in a single view for the drone operator.</p>
+            <dl class="sw-read" aria-hidden="true">
+              <div><dt>Altitude</dt><dd>2,140 m</dd></div>
+              <div><dt>Wind</dt><dd>6 m/s</dd></div>
+              <div><dt>Battery</dt><dd>78%</dd></div>
+            </dl>
+          </div>
+        </li>
+        <li class="sw-item">
+          <span class="sw-num" aria-hidden="true">03</span>
+          <div class="sw-body">
+            <h3>Safety margins</h3>
+            <p>Automatic checks before and during the mission.</p>
+            <ul class="sw-checks" aria-hidden="true"><li>Weather</li><li>Battery</li><li>Landing area</li></ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- COME DECIDE IL SOFTWARE: un frammento vero dell'interfaccia -->
+  <section class="decide" id="come-decide" aria-labelledby="decide-title">
+    <div class="grid">
+      <div class="decide-text">
+        <h2 id="decide-title" class="display head" data-rise>How the software<br> decides</h2>
+        <p class="decide-lead" data-rise>Hour by hour, it compares the weather along the route with the drone's limits and with flights already flown. Then it indicates whether to go, and when.</p>
+        <dl class="verdicts" data-rise>
+          <div><dt><span class="esito s-ok">Flyable</span></dt><dd>Within limits, in conditions already proven.</dd></div>
+          <div><dt><span class="esito s-mar">Marginal</span></dt><dd>Close to the limit or not yet tested: the drone operator decides.</dd></div>
+          <div><dt><span class="esito s-no">Not flyable</span></dt><dd>Beyond the limit. No take-off.</dd></div>
+        </dl>
+        <p class="status" data-rise><strong>Today:</strong> online demo. Every imported flight widens the range of conditions in which we know we can fly.</p>
+        <!-- DA CONFERMARE: possiamo dire "in prova con un operatore partner"? Se sì, togli hidden qui sotto e cancella la riga sopra (TO BE CONFIRMED: can we say "being trialled with a partner drone operator"? If so, remove hidden below and delete the line above) -->
+        <p class="status" hidden><strong>Today:</strong> online demo, being trialled with a partner drone operator. Every imported flight widens the range of conditions in which we know we can fly.</p>
+      </div>
+      <figure class="ui-frag" data-ui data-rise>
+        <div class="ui-head">
+          <p class="ui-title">Mission assessment</p>
+          <p class="ui-sub">Valley hub → Rifugio Pian dei Camosci · 2 rotations · FlyCart 100</p>
+        </div>
+        <div class="ui-verdict">
+          <span class="esito s-ok">Flyable</span>
+          <p><strong>Window 07:00–10:00</strong><br>Wind at altitude rises in the afternoon and exceeds the limit between 14:00 and 16:00.</p>
+        </div>
+        <div class="ui-chart">
+          <p class="ui-axis">Wind at altitude, m/s · hour by hour</p>
+          <svg class="chart-wide" viewBox="0 0 640 220" role="img" aria-label="Wind at altitude, hour by hour: below the limit until 11:00, above the 12 metres per second limit between 14:00 and 16:00"><text x="28" y="194.0" text-anchor="end">0</text><text x="28" y="150.0" text-anchor="end">4</text><text x="28" y="106.0" text-anchor="end">8</text><text x="28" y="62.0" text-anchor="end">12</text><text x="28" y="18.0" text-anchor="end">16</text><line class="lim" x1="36" x2="632" y1="58.0" y2="58.0"/><line class="mar" x1="36" x2="632" y1="77.8" y2="77.8"/><rect class="win" x="78.6" y="14" width="127.7" height="176"/><rect class="b-ok" x="39.0" y="144.9" width="36.6" height="45.1"/><text x="57.3" y="208" text-anchor="middle">6</text><rect class="b-ok" x="81.6" y="139.4" width="36.6" height="50.6"/><rect class="b-ok" x="124.1" y="132.8" width="36.6" height="57.2"/><text x="142.4" y="208" text-anchor="middle">8</text><rect class="b-ok" x="166.7" y="124.0" width="36.6" height="66.0"/><rect class="b-ok" x="209.3" y="108.6" width="36.6" height="81.4"/><text x="227.6" y="208" text-anchor="middle">10</text><rect class="b-ok" x="251.9" y="93.2" width="36.6" height="96.8"/><rect class="b-mar" x="294.4" y="73.4" width="36.6" height="116.6"/><text x="312.7" y="208" text-anchor="middle">12</text><rect class="b-mar" x="337.0" y="64.6" width="36.6" height="125.4"/><rect class="b-no" x="379.6" y="48.1" width="36.6" height="141.9"/><text x="397.9" y="208" text-anchor="middle">14</text><rect class="b-no" x="422.1" y="40.4" width="36.6" height="149.6"/><rect class="b-no" x="464.7" y="53.6" width="36.6" height="136.4"/><text x="483.0" y="208" text-anchor="middle">16</text><rect class="b-mar" x="507.3" y="70.1" width="36.6" height="119.9"/><rect class="b-ok" x="549.9" y="99.8" width="36.6" height="90.2"/><text x="568.1" y="208" text-anchor="middle">18</text><rect class="b-ok" x="592.4" y="120.7" width="36.6" height="69.3"/></svg>
+          <svg class="chart-phone" viewBox="0 0 360 280" role="img" aria-label="Wind at altitude, hour by hour: below the limit until 11:00, above the 12 metres per second limit between 14:00 and 16:00"><text x="28" y="252.0" text-anchor="end">0</text><text x="28" y="198.0" text-anchor="end">4</text><text x="28" y="144.0" text-anchor="end">8</text><text x="28" y="90.0" text-anchor="end">12</text><text x="28" y="36.0" text-anchor="end">16</text><rect class="win" x="56.9" y="30" width="68.6" height="216"/><line class="lim" x1="34" x2="354" y1="84.0" y2="84.0"/><line class="mar" x1="34" x2="354" y1="108.3" y2="108.3"/><rect class="b-ok" x="36.0" y="190.7" width="18.9" height="55.3"/><text x="45.4" y="270" text-anchor="middle">6</text><rect class="b-ok" x="58.9" y="183.9" width="18.9" height="62.1"/><rect class="b-ok" x="81.7" y="175.8" width="18.9" height="70.2"/><rect class="b-ok" x="104.6" y="165.0" width="18.9" height="81.0"/><text x="114.0" y="270" text-anchor="middle">9</text><rect class="b-ok" x="127.4" y="146.1" width="18.9" height="99.9"/><rect class="b-ok" x="150.3" y="127.2" width="18.9" height="118.8"/><rect class="b-mar" x="173.1" y="102.9" width="18.9" height="143.1"/><text x="182.6" y="270" text-anchor="middle">12</text><rect class="b-mar" x="196.0" y="92.1" width="18.9" height="153.9"/><rect class="b-no" x="218.9" y="71.8" width="18.9" height="174.2"/><rect class="b-no" x="241.7" y="62.4" width="18.9" height="183.6"/><text x="251.1" y="270" text-anchor="middle">15</text><rect class="b-no" x="264.6" y="78.6" width="18.9" height="167.4"/><rect class="b-mar" x="287.4" y="98.8" width="18.9" height="147.2"/><rect class="b-ok" x="310.3" y="135.3" width="18.9" height="110.7"/><text x="319.7" y="270" text-anchor="middle">18</text><rect class="b-ok" x="333.1" y="160.9" width="18.9" height="85.1"/></svg>
+        </div>
+        <p class="ui-legend"><span class="lg-win">flight window</span><span class="lg-lim">drone limit, 12 m/s</span><span class="lg-mar">85% of limit</span></p>
+        <ul class="ui-reasons">
+          <li>Wind and gusts within the limit during the window</li>
+          <li>Condition already demonstrated by 2 flights</li>
+          <li>Sufficient energy with a 25% reserve</li>
+        </ul>
+        <figcaption>Example with simulated weather and fictitious locations, from the software demo.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- LA FAIRBOX: gli occhi sulla piazzola -->
+  <section class="hardware" id="fairbox" aria-labelledby="fairbox-title">
+    <div class="grid hw-top">
+      <h2 id="fairbox-title" class="display head" data-rise>The Fairbox, eyes<br> on the landing pad</h2>
+      <p class="hw-lead" data-rise>A solar-powered node where the drone lands: it measures wind and visibility and checks that the area is clear. It works with drones of any make.</p>
+    </div>
+    <div class="grid hw-main">
+      <figure class="hw-figure" data-rise>
+        <img id="hw-img" src="../assets/img/fairbox-full.webp" width="1400" height="735" sizes="(max-width: 1100px) 100vw, 60vw" alt="Render of the Fairbox board, perspective view from above" loading="lazy">
+        <figcaption id="hw-cap">Render of the Fairbox board, at design stage.</figcaption>
+      </figure>
+      <div class="hw-side">
+        <p class="hw-states-title" data-rise>It decides on its own, for its own location:</p>
+        <p class="hw-states" data-rise><span class="esito s-ok">Delivery OK</span><span class="esito s-mar">Wait</span><span class="esito s-no">Cancel</span></p>
+        <p class="hw-states-note" data-rise>The status reaches the pilot via the server: the Fairbox never controls the drone.</p>
+      </div>
+    </div>
+    <ol class="hw-blocks" data-rise>
+      <li><button type="button" data-img="fairbox-b1.webp" data-cap="Input and protection: shields the electronics from power supply faults."><strong>Input and protection</strong></button></li>
+      <li><button type="button" data-img="fairbox-b2.webp" data-cap="Power supply: very low consumption, so that it can run on solar power."><strong>Power supply</strong></button></li>
+      <li><button type="button" data-img="fairbox-b3.webp" data-cap="Sensor management: switches the sensors on only when they are needed."><strong>Sensor management</strong></button></li>
+      <li><button type="button" data-img="fairbox-b4.webp" data-cap="Processor and radio: determines the landing pad status and sends it to the server."><strong>Processor and radio</strong></button></li>
+      <li><button type="button" data-img="fairbox-b5.webp" data-cap="Sensors and interfaces: measures the weather and stores the data when the network is unavailable."><strong>Sensors and interfaces</strong></button></li>
+    </ol>
+    <div class="grid hw-net">
+      <div class="hw-net-left">
+        <h3 class="hw-net-title" data-rise>One network per valley, not a mast for every mountain hut</h3>
+        <svg class="hw-net-map" viewBox="0 0 460 260" role="img" aria-label="Diagram of a valley: base on the valley floor, valley station in the middle and three mountain hut landing pads connected by routes" data-rise>
+          <path class="m-ridge" d="M0 260 L0 170 L70 110 L130 150 L210 60 L290 130 L360 40 L460 110 L460 260 Z"/>
+          <path class="m-route" d="M52 222 Q120 170 214 120"/>
+          <path class="m-route" d="M52 222 Q220 210 300 168"/>
+          <path class="m-route" d="M52 222 Q260 130 372 78"/>
+          <rect class="m-hub" x="36" y="206" width="32" height="32"/>
+          <circle class="m-valley" cx="196" cy="178" r="16"/>
+          <circle class="m-pad" cx="214" cy="120" r="11"/><circle class="m-pad" cx="300" cy="168" r="11"/><circle class="m-pad" cx="372" cy="78" r="11"/>
+          <text x="22" y="256">base</text><text x="196" y="218" text-anchor="middle">valley station</text><text x="452" y="204" text-anchor="end">hut landing pads</text>
+        </svg>
+      </div>
+      <ul class="hw-net-list" data-rise>
+        <li><strong>Valley station.</strong> One per valley: the weather and radio reference for all routes.</li>
+        <li><strong>Landing pad node.</strong> Where needed: checks that the delivery area is clear and safe.</li>
+        <li><strong>Mountain hut app.</strong> Confirms that the area is clear and tracks the delivery.</li>
+        <li class="hw-net-key"><strong>Drone-agnostic:</strong> the same data serves every drone operator and every aircraft.</li>
+      </ul>
+      <p class="status" data-rise><strong>Today:</strong> board at design stage, firmware tested in simulation.</p>
+    </div>
+  </section>
+
+  <!-- LA RICERCA SUL VENTO -->
+  <section class="research" id="ricerca" aria-labelledby="ricerca-title">
+    <div class="research-copy">
+      <h2 id="ricerca-title" class="display head" data-rise>Understanding how wind<br> flows through a valley</h2>
+      <p data-rise>Research on wind fields is getting under way with Politecnico di Milano: forecasting the wind along the entire route, including where nobody measures it.</p>
+    </div>
+    <svg class="research-art" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="r-far" d="M0 520 L0 300 L180 210 L330 270 L520 120 L690 230 L860 90 L1040 200 L1220 130 L1440 220 L1440 520 Z"/>
+      <path class="r-near" d="M0 520 L0 400 L240 330 L420 380 L600 300 L780 360 L980 280 L1180 350 L1440 300 L1440 520 Z"/>
+      <path class="r-wind" d="M-20 250 C 200 200, 360 300, 560 230 S 900 160, 1120 220 S 1360 240, 1480 200"/>
+      <path class="r-wind" d="M-20 300 C 220 260, 380 350, 600 290 S 940 230, 1160 280 S 1380 300, 1480 270"/>
+      <path class="r-wind" d="M-20 350 C 240 320, 420 400, 640 350 S 980 300, 1200 340 S 1400 360, 1480 330"/>
+      <circle class="r-sensor" cx="600" cy="300" r="9"/><circle class="r-sensor" cx="980" cy="280" r="9"/>
+    </svg>
+  </section>
+
+  <!-- OLTRE I RIFUGI E STATO DEL PROGETTO -->
+  <section class="next" id="prossimi-passi" aria-labelledby="oltre-title">
+    <div class="grid">
+      <div class="next-uses">
+        <h2 id="oltre-title" class="display head" data-rise>Where the same<br> infrastructure can go</h2>
+        <ul class="uses" data-rise>
+          <li>Alpine pastures</li>
+          <li>High-altitude construction sites</li>
+          <li>Remote facilities and infrastructure</li>
+          <li>Islands and isolated areas</li>
+        </ul>
+        <p class="next-note" data-rise>We are starting with mountain huts because they are the most demanding setting: what works here can work elsewhere.</p>
+      </div>
+      <div class="slip roadmap" data-rise>
+        <h3 class="roadmap-title" id="stato-title">Project status</h3>
+        <ol aria-labelledby="stato-title">
+          <li>
+            <p class="roadmap-when">Today</p>
+            <p>Software demo online, first test flights, Fairbox design under way.</p>
+          </li>
+          <!-- DA CONFERMARE: nome della valle (Val Codera) e formulazione della stagione 2027. Per pubblicarla togli hidden (TO BE CONFIRMED: valley name and wording of the 2027 season. Remove hidden to publish) -->
+          <li hidden>
+            <p class="roadmap-when">2027 season</p>
+            <p>Pilot service in Val Codera with a partner drone operator.</p>
+          </li>
+          <li>
+            <p class="roadmap-when">Next</p>
+            <p>New valleys and new drone operators in the network.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- IL TEAM: ritratti su riquadri colorati -->
+  <section class="team" id="team" aria-labelledby="team-title">
+    <div class="team-head">
+      <h2 id="team-title" class="display head team-title" data-rise>The team</h2>
+      <p class="team-lead" data-rise>Four co-founders with expertise in engineering, automation, mountain environments and economics.</p>
+    </div>
+    <ul class="team-grid">
+      <li class="member" data-rise>
+        <div class="tile t1"><img src="../assets/img/andrea-galasso.jpg" width="1254" height="1254" alt="Andrea Galasso" loading="lazy"></div>
+        <h3>Andrea Galasso</h3>
+        <p class="role">CEO &amp; Co-founder · Industrial Engineering &amp; Management</p>
+        <p class="links"><a href="https://www.linkedin.com/in/andrea-galasso-371a35304/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/andrea_galass" target="_blank" rel="noopener">Instagram</a></p>
+      </li>
+      <li class="member" data-rise>
+        <div class="tile t2"><img src="../assets/img/davide-vincenzi.jpg" width="1254" height="1254" alt="Davide Vincenzi" loading="lazy"></div>
+        <h3>Davide Vincenzi</h3>
+        <p class="role">CTO &amp; Co-founder · Automation Engineering</p>
+        <p class="links"><a href="https://www.linkedin.com/in/davide-vincenzi-60206438b" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/vincenzi_davide" target="_blank" rel="noopener">Instagram</a></p>
+      </li>
+      <li class="member" data-rise>
+        <div class="tile t3"><img src="../assets/img/filippo-soli.jpg" width="1254" height="1254" alt="Filippo Soli" loading="lazy"></div>
+        <h3>Filippo Soli</h3>
+        <p class="role">COO &amp; Co-founder · Mountain Territory Protection and Environmental Care</p>
+        <p class="links"><a href="https://www.linkedin.com/in/filippo-soli-423709440/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/filo.soli" target="_blank" rel="noopener">Instagram</a></p>
+      </li>
+      <li class="member" data-rise>
+        <div class="tile t4"><img src="../assets/img/leo-di-benedetto.jpg" width="1024" height="1024" alt="Leo Di Benedetto" loading="lazy"></div>
+        <h3>Leo Di Benedetto</h3>
+        <p class="role">CFO &amp; Co-founder · Economics &amp; Management</p>
+        <p class="links"><a href="https://www.linkedin.com/in/leo-di-benedetto-483678439/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/leodibenedetto" target="_blank" rel="noopener">Instagram</a></p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- RICERCA E PROGETTI: la lista stampata -->
+  <section class="proof" aria-labelledby="proof-title">
+    <div class="guest-card" data-rise>
+      <h2 id="proof-title" class="guest-title">Who we work with</h2>
+      <p class="guest-names">TEF Ignition&nbsp;· Tech Europe Foundation&nbsp;· Partner mountain huts<!-- DA CONFERMARE: consenso di AF Drones a essere citata (TO BE CONFIRMED: AF Drones consent to be named) --><span hidden>&nbsp;· AF Drones</span><!-- DA CONFERMARE: collaborazione con eV-Now citabile? (TO BE CONFIRMED: can the eV-Now collaboration be cited?) --><span hidden>&nbsp;· eV-Now</span><!-- DA CONFERMARE: il Politecnico di Milano si può citare come partner? (TO BE CONFIRMED: can Politecnico di Milano be cited as a partner?) --><span hidden>&nbsp;· Politecnico di Milano</span></p>
+      <div class="guest-notes">
+        <p><strong>TEF Ignition.</strong> Selected for the Tech Europe Foundation programme, alongside Bocconi and Politecnico di Milano.</p>
+        <!-- DA CONFERMARE: consenso di AF Drones (TO BE CONFIRMED: AF Drones consent) -->
+        <p hidden><strong>Drone operators.</strong> We work with the engineering firm AF Drones, a drone operator based near Edolo, to test software and hardware in the field.</p>
+        <!-- DA CONFERMARE: collaborazione con eV-Now (TO BE CONFIRMED: eV-Now collaboration) -->
+        <p hidden><strong>Local community.</strong> We are starting a collaboration with the eV-Now association.</p>
+        <p><strong>Shared vision.</strong> We work with a number of partner mountain huts that believe in the logistics of the future.</p>
+        <!-- DA CONFERMARE: numero dei rifugi partner. Quando c'è, togli hidden qui sotto e cancella la riga "Visione comune" sopra (TO BE CONFIRMED: number of partner mountain huts. When available, remove hidden below and delete the "Shared vision" line above) -->
+        <p hidden><strong>Mountain huts.</strong> [N] partner mountain huts in Val Codera share our belief in the logistics of the future.</p>
+        <!-- DA CONFERMARE: formulazione sul Politecnico di Milano (TO BE CONFIRMED: wording on Politecnico di Milano) -->
+        <p hidden><strong>Research.</strong> Research on wind in valleys is getting under way with Politecnico di Milano.</p>
+      </div>
+      <figure class="ph guest-photo"><img src="../assets/img/tab-sicurezza.jpg" width="1400" height="788" alt="Drone flying over rock and snow" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- CONTATTI: il coupon da ritagliare -->
+  <section id="contatti" class="contact" aria-labelledby="contatti-title">
+    <div class="contact-head">
+      <h2 id="contatti-title" class="display head" data-rise>Get in touch<br> with us</h2>
+      <p class="contact-lead" data-rise>Tell us who you are: a member of the team will reply to you directly.</p>
+    </div>
+
+    <span id="contatti-rifugi" class="tab-anchor"></span><span id="contatti-operatori" class="tab-anchor"></span><span id="contatti-enti" class="tab-anchor"></span>
+    <div class="contact-tabs" data-tabs>
+      <div class="tablist" role="tablist" aria-label="Contact type" data-rise>
+        <button class="tab" role="tab" aria-selected="true" aria-controls="panel-rifugi" id="tab-rifugi" tabindex="0">For mountain huts</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-operatori" id="tab-operatori" tabindex="-1">For drone operators</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-aziende" id="tab-aziende" tabindex="-1">Public bodies and companies</button>
+      </div>
+
+      <!-- SCHERMATA 1: PER RIFUGI -->
+      <div id="panel-rifugi" class="panel coupon" role="tabpanel" aria-labelledby="tab-rifugi">
+        <div class="coupon-left">
+          <h3 class="display coupon-title">Bring FairDrones<br> to your mountain hut</h3>
+          <p>Optimise high-altitude supply logistics with a network of electric cargo drones and authorised drone operators.</p>
+          <ul class="checks">
+            <li>More flying days, with weather measured in the valley</li>
+            <li>Small, frequent deliveries, alongside the helicopter</li>
+            <li>Dedicated support for your logistics needs</li>
+          </ul>
+        </div>
+        <form class="contact-form coupon-right" name="contatto-rifugi" action="/en/thank-you.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contatto-rifugi">
+          <input type="hidden" name="subject" data-remove-prefix value="New request from the FairDrones website — Mountain hut">
+          <input type="hidden" name="tipo" value="Mountain hut">
+          <input type="hidden" name="lingua" value="EN">
+          <input type="text" name="bot-field" class="hp" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore aria-hidden="true">
+          <label class="sr" for="rifugio-nome">Full name</label>
+          <input type="text" id="rifugio-nome" name="nome" placeholder="Full name" autocomplete="name" required>
+          <label class="sr" for="rifugio-struttura">Mountain hut name</label>
+          <input type="text" id="rifugio-struttura" name="rifugio" placeholder="Name of the mountain hut" required>
+          <label class="sr" for="rifugio-email">Email</label>
+          <input type="email" id="rifugio-email" name="email" placeholder="Email" autocomplete="email" required>
+          <label class="sr" for="rifugio-messaggio">Message / Request</label>
+          <textarea id="rifugio-messaggio" name="messaggio" placeholder="What supplies do you need?"></textarea>
+          <button type="submit" class="btn btn-submit">Send request</button>
+          <p class="form-note">By sending this form you accept our <a href="../privacy-policy.html">Privacy Policy (Italian)</a>.</p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <!-- SCHERMATA 2: PER OPERATORI -->
+      <div id="panel-operatori" class="panel coupon" role="tabpanel" aria-labelledby="tab-operatori" hidden>
+        <div class="coupon-left">
+          <h3 class="display coupon-title">Flying in the mountains?<br> Let's work together</h3>
+          <p>We are looking for drone operators who want to take their drones where today only the helicopter flies.</p>
+          <ul class="checks">
+            <li>Requests already collected and grouped</li>
+            <li>Valley weather data and equipped landing pads</li>
+            <li>Technical and regulatory support</li>
+          </ul>
+        </div>
+        <form class="contact-form coupon-right" name="contatto-operatori" action="/en/thank-you.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contatto-operatori">
+          <input type="hidden" name="subject" data-remove-prefix value="New drone operator from the FairDrones website">
+          <input type="hidden" name="tipo" value="Drone operator">
+          <input type="hidden" name="lingua" value="EN">
+          <input type="text" name="bot-field" class="hp" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore aria-hidden="true">
+          <label class="sr" for="operatore-nome">Full name</label>
+          <input type="text" id="operatore-nome" name="nome" placeholder="Full name" autocomplete="name" required>
+          <label class="sr" for="operatore-azienda">Drone operator / Company</label>
+          <input type="text" id="operatore-azienda" name="azienda" placeholder="Drone operator or company" autocomplete="organization" required>
+          <label class="sr" for="operatore-email">Email</label>
+          <input type="email" id="operatore-email" name="email" placeholder="Email" autocomplete="email" required>
+          <label class="sr" for="operatore-mezzi">Aircraft</label>
+          <select id="operatore-mezzi" name="mezzi">
+            <option value="" selected>Which drones do you use?</option>
+            <option>Cargo drones</option>
+            <option>Survey and inspection drones</option>
+            <option>Other</option>
+          </select>
+          <label class="sr" for="operatore-stato">Authorisation</label>
+          <select id="operatore-stato" name="stato">
+            <option value="" selected>What is your authorisation status?</option>
+            <option>Already authorised in the Specific category</option>
+            <option>Authorisation in progress</option>
+            <option>Not yet</option>
+          </select>
+          <label class="sr" for="operatore-messaggio">Message</label>
+          <textarea id="operatore-messaggio" name="messaggio" placeholder="Where do you operate, and what would you like to do in the mountains?"></textarea>
+          <button type="submit" class="btn btn-submit">Apply as a drone operator</button>
+          <p class="form-note">By sending this form you accept our <a href="../privacy-policy.html">Privacy Policy (Italian)</a>.</p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <!-- SCHERMATA 3: ENTI E AZIENDE -->
+      <div id="panel-aziende" class="panel coupon" role="tabpanel" aria-labelledby="tab-aziende" hidden>
+        <div class="coupon-left">
+          <h3 class="display coupon-title">Public bodies, companies<br> and research centres</h3>
+          <p>Municipalities, mountain communities, competence centres, technology companies: let's build the infrastructure for remote areas together.</p>
+          <ul class="checks">
+            <li>Reply within a few working days</li>
+            <li>Direct contact with the founders</li>
+          </ul>
+        </div>
+        <form class="contact-form coupon-right" name="contatto-aziende" action="/en/thank-you.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contatto-aziende">
+          <input type="hidden" name="subject" data-remove-prefix value="New proposal from the FairDrones website — Public body or company">
+          <input type="hidden" name="tipo" value="Public body / Company">
+          <input type="hidden" name="lingua" value="EN">
+          <input type="text" name="bot-field" class="hp" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore aria-hidden="true">
+          <label class="sr" for="azienda-nome">Full name</label>
+          <input type="text" id="azienda-nome" name="nome" placeholder="Full name" autocomplete="name" required>
+          <label class="sr" for="azienda-societa">Company / Organisation</label>
+          <input type="text" id="azienda-societa" name="azienda" placeholder="Public body, company or organisation" autocomplete="organization" required>
+          <label class="sr" for="azienda-email">Work email</label>
+          <input type="email" id="azienda-email" name="email" placeholder="Work email" autocomplete="email" required>
+          <label class="sr" for="azienda-messaggio">Proposal / Collaboration idea</label>
+          <textarea id="azienda-messaggio" name="messaggio" placeholder="Tell us about your idea or project"></textarea>
+          <button type="submit" class="btn btn-submit">Propose an idea</button>
+          <p class="form-note">By sending this form you accept our <a href="../privacy-policy.html">Privacy Policy (Italian)</a>.</p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER: il retro della bolla, scoperto dalla pagina che sale -->
+<footer class="curtain">
+  <div class="back-card">
+    <div class="back-left">
+      <p class="display back-name">FairDrones</p>
+      <p>Infrastructure and network for cargo drones in the mountains, starting with Alpine mountain huts.</p>
+      <p>For enquiries and collaborations, write to us: we will reply as soon as possible.</p>
+    </div>
+    <div class="back-right">
+      <img class="stamp" src="../assets/img/flycart-1200.jpg" width="1200" height="657" alt="" loading="lazy">
+      <ul class="back-links">
+        <li><a href="mailto:info@fairdrones.it">info@fairdrones.it</a></li>
+        <li><a href="https://www.linkedin.com/company/fairdrones/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/fairdrones" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="../privacy-policy.html">Privacy policy (Italian)</a> · <a href="../cookie-policy.html">Cookie policy (Italian)</a></li>
+        <li><a href="/area-riservata">Reserved area</a></li>
+        <li><a href="../" lang="it" hreflang="it">Italiano</a></li>
+      </ul>
+    </div>
+    <p class="imprint">© 2026 FairDrones</p>
+  </div>
+</footer>
+
+<script>
+  const CONTACT_EMAIL = 'info@fairdrones.it';
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Tabs dei contatti (tastiera: frecce sinistra/destra)
+  document.querySelectorAll('[data-tabs]').forEach(root => {
+    const tabs = [...root.querySelectorAll('[role=tab]')];
+    const select = (i, focus) => tabs.forEach((t, j) => {
+      const on = i === j;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      if (on && focus) t.focus({ preventScroll: true });
+    });
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(i, true));
+      t.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') select((i + 1) % tabs.length, true);
+        if (e.key === 'ArrowLeft') select((i - 1 + tabs.length) % tabs.length, true);
+        if (e.key === 'Home') { e.preventDefault(); select(0, true); }
+        if (e.key === 'End') { e.preventDefault(); select(tabs.length - 1, true); }
+      });
+    });
+    // I link #contatti-rifugi / #contatti-operatori / #contatti-enti aprono il tab giusto
+    const HASH_TAB = { '#contatti-rifugi': 'tab-rifugi', '#contatti-operatori': 'tab-operatori', '#contatti-enti': 'tab-aziende' };
+    const fromHash = () => {
+      const id = HASH_TAB[location.hash];
+      const i = tabs.findIndex(t => t.id === id);
+      if (i > -1) select(i, false);
+    };
+    addEventListener('hashchange', fromHash);
+    // un secondo clic sullo stesso link non cambia l'hash: riallinea comunque il tab
+    document.querySelectorAll('a[href^="#contatti-"]').forEach(a => a.addEventListener('click', () => setTimeout(fromHash)));
+    fromHash();
+  });
+
+  // Entrata a cascata: titolo, testo, immagine di ogni sezione
+  const groups = new Map();
+  document.querySelectorAll('[data-rise]').forEach(el => {
+    const sec = el.closest('section') || document.body;
+    if (!groups.has(sec)) groups.set(sec, []);
+    const list = groups.get(sec);
+    el.style.setProperty('--i', list.length);
+    list.push(el);
+  });
+  // I contenuti sono visibili di default. Un elemento viene nascosto ("armato")
+  // solo quando sta per entrare nello schermo, e compare quando ci entra:
+  // se lo script non parte, o si salta a una sezione, non resta mai nulla di nascosto.
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const rises = [...document.querySelectorAll('[data-rise]')];
+    const show = el => { el.classList.add('in'); el.classList.remove('pre'); };
+    const showIO = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { show(e.target); showIO.unobserve(e.target); }
+    }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    const arm = el => {
+      if (el.classList.contains('in') || el.classList.contains('pre')) return;
+      const top = el.getBoundingClientRect().top;
+      if (top > innerHeight * 0.94 || scrollY < 10) { el.classList.add('pre'); showIO.observe(el); }
+      else el.classList.add('in');
+    };
+    const armIO = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { arm(e.target); armIO.unobserve(e.target); }
+    }), { rootMargin: '0px 0px 110% 0px' });
+    rises.forEach(el => armIO.observe(el));
+    // Se ci si allontana di nuovo (per esempio tornando in cima), l'elemento torna visibile
+    let tick = 0;
+    addEventListener('scroll', () => {
+      cancelAnimationFrame(tick);
+      tick = requestAnimationFrame(() => {
+        document.querySelectorAll('[data-rise].pre').forEach(el => {
+          if (el.getBoundingClientRect().top > innerHeight * 2.3) { el.classList.remove('pre'); showIO.unobserve(el); armIO.observe(el); }
+        });
+      });
+    }, { passive: true });
+  }
+
+  // Invio moduli con Netlify Forms.
+  // Netlify registra i form al deploy (data-netlify) e inoltra ogni invio
+  // a info@fairdrones.it tramite la notifica email impostata nel pannello.
+  // Senza JS il form fa un normale POST e Netlify reindirizza a /grazie.html.
+  document.querySelectorAll('.contact-form').forEach(form => {
+    const status = form.querySelector('.form-status');
+    const btn = form.querySelector('button[type=submit]');
+    const SKIP = ['form-name', 'bot-field', 'subject'];
+
+    const labelOf = el => form.querySelector(`label[for="${el.id}"]`)?.textContent.trim() || el.name;
+
+    const mailtoLink = () => {
+      const fields = [...form.elements].filter(el => el.name && !SKIP.includes(el.name) && el.type !== 'submit');
+      const HIDDEN_LABELS = { tipo: 'Contact type', lingua: 'Language' };
+      const body = fields.map(el => `${el.type === 'hidden' ? (HIDDEN_LABELS[el.name] || el.name) : labelOf(el)}: ${el.value}`).join('\n');
+      const subject = form.elements.subject.value;
+      return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    };
+
+    const show = (type, html) => {
+      status.className = 'form-status' + (type ? ' ' + type : '');
+      status.innerHTML = html;
+    };
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+
+      // Il campo trappola (bot-field) ferma i bot che inviano il form senza
+      // eseguire JavaScript. Qui siamo in un browser vero: l'autocompilazione o
+      // un'estensione possono riempirlo per errore e Netlify scarterebbe l'invio
+      // come spam, quindi lo svuotiamo prima di spedire.
+      const data = new FormData(form);
+      if (data.get('bot-field')) console.info('[Form] spam-trap field filled in by the browser: cleared before sending');
+      data.set('bot-field', '');
+
+      // Aprendo il file dal computer non c'è nessun server che riceva il form
+      if (location.protocol === 'file:') {
+        show('err', `Sending only works on the site published on Netlify. <a href="${mailtoLink()}">Open a pre-filled email to ${CONTACT_EMAIL}</a>.`);
+        return;
+      }
+
+      btn.disabled = true;
+      form.classList.add('is-sending');
+      show('', 'Sending…');
+      try {
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(data).toString()
+        });
+        console.info('[Form] response:', res.status, res.url, 'server:', res.headers.get('server'), 'redirect:', res.redirected);
+        // Un redirect (es. fairdrones.it -> www.fairdrones.it) trasforma il POST in GET:
+        // la risposta e' 200 ma Netlify non riceve nulla, quindi va trattato come errore.
+        if (res.redirected) throw new Error('Request redirected to ' + res.url + ': the form was not received');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        form.reset();
+        show('ok', 'Thank you. Your message has been sent and we will reply as soon as possible.');
+      } catch (err) {
+        console.error('Form submission failed:', err);
+        show('err', `The form could not be sent. <a href="${mailtoLink()}">Write to us directly at ${CONTACT_EMAIL}</a>.`);
+      } finally {
+        btn.disabled = false;
+        form.classList.remove('is-sending');
+      }
+    });
+  });
+
+  // Fairbox: scegliendo un blocco, il render mostra quella parte della scheda
+  (() => {
+    const img = document.getElementById('hw-img'), cap = document.getElementById('hw-cap');
+    if (!img) return;
+    const base = { src: img.getAttribute('src'), cap: cap.textContent };
+    const btns = [...document.querySelectorAll('.hw-blocks button')];
+    btns.forEach(b => {
+      const pre = new Image(); pre.src = '../assets/img/' + b.dataset.img;
+      b.addEventListener('click', () => {
+        const on = b.getAttribute('aria-pressed') !== 'true';
+        btns.forEach(x => x.setAttribute('aria-pressed', 'false'));
+        b.setAttribute('aria-pressed', String(on));
+        img.classList.add('swap');
+        setTimeout(() => {
+          img.src = on ? '../assets/img/' + b.dataset.img : base.src;
+          cap.textContent = on ? b.dataset.cap : base.cap;
+          img.classList.remove('swap');
+        }, reduceMotion ? 0 : 160);
+      });
+      b.setAttribute('aria-pressed', 'false');
+    });
+  })();
+
+  // Tema chiaro / scuro
+  (() => {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    const isDark = () => (root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) === 'dark';
+    const sync = () => root.classList.toggle('is-dark', isDark());
+    sync();
+    toggleBtn?.addEventListener('click', () => {
+      const next = isDark() ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      sync();
+    });
+  })();
+</script>
+</body>
+</html>
