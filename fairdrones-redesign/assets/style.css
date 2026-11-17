@@ -52,9 +52,9 @@
 
   /* tipografia: cinque gradini */
   --step-small: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
-  --step-body: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
-  --step-lead: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
-  --step-sub: clamp(1.625rem, 1.1rem + 1.6vw, 2.5rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.2vw, 1.1875rem);
+  --step-lead: clamp(1.1875rem, 1.05rem + 0.45vw, 1.375rem);
+  --step-sub: clamp(1.5rem, 1.1rem + 1.2vw, 2.125rem);
   --step-head: clamp(2.25rem, 1.2rem + 3.6vw, 4.25rem);
   --step-display: clamp(2.75rem, 1rem + 5vw, 5rem);
 
@@ -359,6 +359,7 @@ p {
   display: flex;
   gap: 32px;
   font-weight: 600;
+  font-size: var(--step-small);
 }
 
 .toplinks a {
@@ -526,8 +527,8 @@ p {
   font-family: var(--display);
   font-weight: 800;
   letter-spacing: -0.02em;
-  font-size: var(--step-sub);
-  line-height: 0.95;
+  font-size: clamp(1.375rem, 1.1rem + 0.9vw, 1.875rem);
+  line-height: 1;
 }
 
 .facts span {
@@ -985,7 +986,7 @@ p {
 
 .guest-names {
   margin-top: 28px;
-  font-size: var(--step-lead);
+  font-size: var(--step-body);
   line-height: 1.6;
   font-weight: 600;
 }
@@ -1901,7 +1902,7 @@ p {
 }
 
 .ui-chart text {
-  font: 600 19px var(--text);
+  font: 600 17px var(--text);
   fill: #4d6153;
 }
 
@@ -2067,7 +2068,7 @@ p {
 }
 
 .hw-states .esito {
-  font-size: var(--step-lead);
+  font-size: var(--step-small);
   padding: 10px 16px 8px;
 }
 
