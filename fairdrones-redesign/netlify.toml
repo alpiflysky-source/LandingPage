@@ -1,0 +1,6 @@
+# Usato da Netlify se nelle impostazioni del sito la "Base directory" è fairdrones-redesign:
+# in quel caso Netlify legge QUESTO file e pubblica questa cartella.
+# Se la base directory è vuota, vale invece netlify.toml nella radice della repository.
+[build]
+  publish = "."
+  command = ""
