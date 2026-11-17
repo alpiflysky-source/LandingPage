@@ -14,8 +14,7 @@ CONTENUTO DELLA CARTELLA
   cookie-policy.html    Informativa cookie
   assets/style.css      Tutto lo stile del sito
   assets/fonts/         Font Manrope e Inter (in locale, niente Google Fonts)
-  assets/img/           Logo, foto del team, immagini e render della scheda Fairbox
-                        (fairbox-full.webp e fairbox-b1...b5.webp, ricavati dal modello 3D)
+  assets/img/           Logo, foto del team e immagini del sito
 
   Fuori dalla cartella, nella radice del repository:
   netlify.toml          Dice a Netlify di pubblicare la cartella fairdrones-redesign
@@ -183,6 +182,15 @@ la riga di riserva. Poi cancellate il commento.
   - Con chi lavoriamo, note: "Operatori" (AF Drones, base vicino a Edolo),
     "Territorio" (eV-Now), "Rifugi" ([N] rifugi partner in Val Codera: va
     scritto il numero al posto di [N]), "Ricerca" (Politecnico di Milano).
+
+
+FAIRBOX: QUANTO DETTAGLIO
+=========================
+Sul sito la Fairbox e' descritta solo come funzione (nodo sulla piazzola,
+stati Consegna OK / Attendere / Annullare). Render della scheda, misure,
+blocchi interni e componenti del kit di piazzola sono stati tolti di
+proposito: il messaggio principale e' la rete di stazioni, i dettagli
+tecnici si mostrano nelle call.
 
 
 NOTA

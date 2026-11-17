@@ -48,7 +48,7 @@
         <a href="#ecosistema">Ecosystem</a>
         <a href="#metodo" class="nav-optional">Method</a>
         <a href="#come-decide">Software</a>
-        <a href="#fairbox">Fairbox</a>
+        <a href="#fairbox">Network</a>
         <a href="#team">Team</a>
         <a href="/area-riservata">Reserved area</a>
       </nav>
@@ -284,30 +284,11 @@
   <!-- LA FAIRBOX: gli occhi sulla piazzola -->
   <section class="hardware" id="fairbox" aria-labelledby="fairbox-title">
     <div class="grid hw-top">
-      <h2 id="fairbox-title" class="display head" data-rise>The Fairbox, eyes<br> on the landing pad</h2>
-      <p class="hw-lead" data-rise>A solar-powered node where the drone lands: it measures wind and visibility and checks that the area is clear. It works with drones of any make.</p>
+      <h2 id="fairbox-title" class="display head" data-rise>One network per valley,<br> not a mast for every hut</h2>
+      <p class="hw-lead" data-rise>At the heart of FairDrones is a network of stations: one reference station in each valley and a node on the landing pads where needed. It works with drones of any make.</p>
     </div>
-    <div class="grid hw-main">
-      <figure class="hw-figure" data-rise>
-        <img id="hw-img" src="../assets/img/fairbox-full.webp" width="1400" height="735" sizes="(max-width: 1100px) 100vw, 60vw" alt="Render of the Fairbox board, perspective view from above" loading="lazy">
-        <figcaption id="hw-cap">Render of the Fairbox board, at design stage.</figcaption>
-      </figure>
-      <div class="hw-side">
-        <p class="hw-states-title" data-rise>It decides on its own, for its own location:</p>
-        <p class="hw-states" data-rise><span class="esito s-ok">Delivery OK</span><span class="esito s-mar">Wait</span><span class="esito s-no">Cancel</span></p>
-        <p class="hw-states-note" data-rise>The status reaches the pilot via the server: the Fairbox never controls the drone.</p>
-      </div>
-    </div>
-    <ol class="hw-blocks" data-rise>
-      <li><button type="button" data-img="fairbox-b1.webp" data-cap="Input and protection: shields the electronics from power supply faults."><strong>Input and protection</strong></button></li>
-      <li><button type="button" data-img="fairbox-b2.webp" data-cap="Power supply: very low consumption, so that it can run on solar power."><strong>Power supply</strong></button></li>
-      <li><button type="button" data-img="fairbox-b3.webp" data-cap="Sensor management: switches the sensors on only when they are needed."><strong>Sensor management</strong></button></li>
-      <li><button type="button" data-img="fairbox-b4.webp" data-cap="Processor and radio: determines the landing pad status and sends it to the server."><strong>Processor and radio</strong></button></li>
-      <li><button type="button" data-img="fairbox-b5.webp" data-cap="Sensors and interfaces: measures the weather and stores the data when the network is unavailable."><strong>Sensors and interfaces</strong></button></li>
-    </ol>
     <div class="grid hw-net">
       <div class="hw-net-left">
-        <h3 class="hw-net-title" data-rise>One network per valley, not a mast for every mountain hut</h3>
         <svg class="hw-net-map" viewBox="0 0 460 260" role="img" aria-label="Diagram of a valley: base on the valley floor, valley station in the middle and three mountain hut landing pads connected by routes" data-rise>
           <path class="m-ridge" d="M0 260 L0 170 L70 110 L130 150 L210 60 L290 130 L360 40 L460 110 L460 260 Z"/>
           <path class="m-route" d="M52 222 Q120 170 214 120"/>
@@ -316,17 +297,28 @@
           <rect class="m-hub" x="36" y="206" width="32" height="32"/>
           <circle class="m-valley" cx="196" cy="178" r="16"/>
           <circle class="m-pad" cx="214" cy="120" r="11"/><circle class="m-pad" cx="300" cy="168" r="11"/><circle class="m-pad" cx="372" cy="78" r="11"/>
-          <text x="22" y="256">base</text><text x="196" y="218" text-anchor="middle">valley station</text><text x="452" y="204" text-anchor="end">hut landing pads</text>
+          <text x="22" y="256">base</text><text x="196" y="250" text-anchor="middle">valley station</text><text x="452" y="204" text-anchor="end">hut landing pads</text>
         </svg>
       </div>
       <ul class="hw-net-list" data-rise>
         <li><strong>Valley station.</strong> One per valley: the weather and radio reference for all routes.</li>
-        <li><strong>Landing pad node.</strong> Where needed: checks that the delivery area is clear and safe.</li>
+        <li><strong>Landing pad node, the Fairbox.</strong> Where needed: checks that the delivery area is clear and safe.</li>
         <li><strong>Mountain hut app.</strong> Confirms that the area is clear and tracks the delivery.</li>
         <li class="hw-net-key"><strong>Drone-agnostic:</strong> the same data serves every drone operator and every aircraft.</li>
       </ul>
-      <p class="status" data-rise><strong>Today:</strong> board at design stage, firmware tested in simulation.</p>
     </div>
+    <div class="grid hw-main">
+      <div class="hw-node">
+        <h3 class="hw-node-title" data-rise>The Fairbox, eyes on the landing pad</h3>
+        <p class="hw-node-text" data-rise>A solar-powered node where the drone lands: it measures wind and visibility and checks that the area is clear.</p>
+      </div>
+      <div class="hw-side">
+        <p class="hw-states-title" data-rise>It decides on its own, for its own location:</p>
+        <p class="hw-states" data-rise><span class="esito s-ok">Delivery OK</span><span class="esito s-mar">Wait</span><span class="esito s-no">Cancel</span></p>
+        <p class="hw-states-note" data-rise>The status reaches the pilot via the server: the Fairbox never controls the drone.</p>
+      </div>
+    </div>
+    <p class="status hw-status" data-rise><strong>Today:</strong> Fairbox at design stage, tested in simulation.</p>
   </section>
 
   <!-- LA RICERCA SUL VENTO -->
@@ -724,29 +716,6 @@
       }
     });
   });
-
-  // Fairbox: scegliendo un blocco, il render mostra quella parte della scheda
-  (() => {
-    const img = document.getElementById('hw-img'), cap = document.getElementById('hw-cap');
-    if (!img) return;
-    const base = { src: img.getAttribute('src'), cap: cap.textContent };
-    const btns = [...document.querySelectorAll('.hw-blocks button')];
-    btns.forEach(b => {
-      const pre = new Image(); pre.src = '../assets/img/' + b.dataset.img;
-      b.addEventListener('click', () => {
-        const on = b.getAttribute('aria-pressed') !== 'true';
-        btns.forEach(x => x.setAttribute('aria-pressed', 'false'));
-        b.setAttribute('aria-pressed', String(on));
-        img.classList.add('swap');
-        setTimeout(() => {
-          img.src = on ? '../assets/img/' + b.dataset.img : base.src;
-          cap.textContent = on ? b.dataset.cap : base.cap;
-          img.classList.remove('swap');
-        }, reduceMotion ? 0 : 160);
-      });
-      b.setAttribute('aria-pressed', 'false');
-    });
-  })();
 
   // Tema chiaro / scuro
   (() => {
