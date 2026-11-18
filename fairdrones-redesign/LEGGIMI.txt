@@ -14,7 +14,11 @@ CONTENUTO DELLA CARTELLA
   cookie-policy.html    Informativa cookie
   assets/style.css      Tutto lo stile del sito
   assets/fonts/         Font Manrope e Inter (in locale, niente Google Fonts)
-  assets/img/           Logo, foto del team e immagini del sito
+  assets/img/           Foto del team e immagini del sito. Logo (versione V2):
+                        logo-fairdrones.svg  logo completo con la scritta, vettoriale
+                        logo-mark.svg        solo il simbolo F, usato nella barra in alto
+                        favicon.svg, favicon-32.png, apple-touch-icon.png  icone del sito
+                        logo.png             simbolo su cerchio bianco, 512 px
 
   Fuori dalla cartella, nella radice del repository:
   netlify.toml          Dice a Netlify di pubblicare la cartella fairdrones-redesign
