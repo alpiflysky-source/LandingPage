@@ -15,8 +15,12 @@ CONTENUTO DELLA CARTELLA
   assets/style.css      Tutto lo stile del sito
   assets/fonts/         Font Manrope e Inter (in locale, niente Google Fonts)
   assets/img/           Foto del team e immagini del sito. Logo (versione V2):
-                        logo-fairdrones.svg  logo completo con la scritta, vettoriale
-                        logo-mark.svg        solo il simbolo F, usato nella barra in alto
+                        logo-fairdrones.svg       logo completo a colori, vettoriale
+                        logo-fairdrones-mono.svg  logo in un colore (versione N), vettoriale.
+                          Nella barra in alto e nel footer il logo monocromatico e'
+                          scritto direttamente nell'HTML: prende il colore del testo
+                          (bianco sulla foto, verde scuro sulle pagine chiare, chiaro
+                          con il tema scuro). Sui telefoni stretti resta solo il simbolo.
                         favicon.svg, favicon-32.png, apple-touch-icon.png  icone del sito
                         logo.png             simbolo su cerchio bianco, 512 px
 
