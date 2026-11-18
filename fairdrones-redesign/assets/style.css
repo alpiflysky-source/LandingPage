@@ -347,12 +347,16 @@ p {
   justify-self: start;
 }
 
-.wordmark img {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #ffffff;
-  padding: 7px 6px 6px 5px;
+.wordmark .wm-mark {
+  height: 36px;
+  width: auto;
+  flex: none;
+}
+
+.wordmark .wm-word {
+  height: 17px;
+  width: auto;
+  flex: none;
 }
 
 .toplinks {
@@ -1236,9 +1240,15 @@ p {
 }
 
 .back-name {
-  font-size: var(--step-sub);
-  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.2vw, 16px);
+  margin-bottom: 22px;
+  color: var(--ink);
 }
+
+.back-name .wm-mark { height: clamp(44px, 4vw, 60px); width: auto; }
+.back-name .wm-word { height: clamp(20px, 1.9vw, 28px); width: auto; }
 
 .back-left p + p {
   margin-top: 8px;
@@ -2422,12 +2432,7 @@ p {
   .nav-cta { padding: 0 16px; }
 }
 @media (max-width: 400px) {
-  .wordmark-name {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
+  .wordmark .wm-word {
+    display: none;
   }
 }
