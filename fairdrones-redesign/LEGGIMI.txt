@@ -190,12 +190,11 @@ la riga di riserva. Poi cancellate il commento.
 
 LOGHI DEI COLLABORATORI
 =======================
-Nella sezione "Con chi lavoriamo" AF Drones ed eV-Now hanno per ora solo il
-nome. Per aggiungere il logo:
-  1. salvate il file in assets/img/ come partner-af-drones.svg e
-     partner-ev-now.svg (va bene anche .png, meglio con sfondo trasparente);
-  2. in index.html e in en/index.html cercate "LOGO:": il commento indica
-     la riga da sostituire.
+I loghi di AF Drones (assets/img/partner-af-drones.svg) ed eV-Now!
+(assets/img/partner-ev-now.svg) sono PROVVISORI: ridisegnati a mano dalle
+immagini ricevute. Appena avete i file ufficiali, salvateli con lo stesso
+nome (se sono .png, cambiate anche l'estensione nei due img in index.html e
+en/index.html: cercate "LOGO PROVVISORIO").
 Il logo TEF (assets/img/tef-logo.svg) e' ricavato da un'immagine: se Tech
 Europe Foundation vi fornisce il file ufficiale, sostituitelo con quello.
 

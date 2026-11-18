@@ -2419,13 +2419,10 @@ p {
   border-radius: var(--r-lg);
 }
 .partner-logo {
-  display: flex;
-  align-items: center;
-  height: 64px;
-  max-width: 220px;
-  margin-bottom: 14px;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 12px;
   object-fit: contain;
-  object-position: left center;
 }
 .partner h3 {
   font-size: var(--step-lead);

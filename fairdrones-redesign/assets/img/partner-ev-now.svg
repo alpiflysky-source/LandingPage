@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="eV-Now!">
+<circle cx="120" cy="120" r="116" fill="#1877f2"/>
+<circle cx="120" cy="120" r="108" fill="none" stroke="#fff" stroke-width="5"/>
+<path fill="none" stroke="#fff" stroke-width="30" stroke-linecap="round" d="M70 108 H150 A44 44 0 1 0 136 140"/>
+<path fill="#fff" d="M146 132 h22 a8 8 0 0 1 8 8 v4 a8 8 0 0 1 -8 8 h-22 Z"/>
+<rect x="176" y="134" width="14" height="5" rx="2" fill="#fff"/><rect x="176" y="146" width="14" height="5" rx="2" fill="#fff"/>
+<text x="120" y="196" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#fff">eV-Now!</text>
+</svg>
