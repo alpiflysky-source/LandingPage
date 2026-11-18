@@ -5,7 +5,7 @@ CONTENUTO DELLA CARTELLA
   index.html            Homepage in italiano: apertura, progetto, ecosistema, punti di forza,
                         metodo, software di volo, come decide il software, Fairbox, ricerca
                         sul vento, oltre i rifugi e stato del progetto, team, con chi
-                        lavoriamo, contatti
+                        lavoriamo (collaboratori), TEF Ignition, contatti
   grazie.html           Pagina "Messaggio inviato" (usata solo se il browser ha JavaScript disattivato)
   en/index.html         Versione inglese completa della homepage (https://fairdrones.it/en/)
   en/thank-you.html     Pagina "Message sent" in inglese
@@ -185,11 +185,19 @@ la riga di riserva. Poi cancellate il commento.
     partner" (oggi e' visibile solo "demo online").
   - Stato del progetto: riga "Stagione 2027 - Servizio pilota in Val Codera
     con un operatore partner" (nome della valle e formulazione).
-  - Con chi lavoriamo, riga dei nomi: AF Drones, eV-Now, Politecnico di
-    Milano.
-  - Con chi lavoriamo, note: "Operatori" (AF Drones, base vicino a Edolo),
-    "Territorio" (eV-Now), "Rifugi" ([N] rifugi partner in Val Codera: va
-    scritto il numero al posto di [N]), "Ricerca" (Politecnico di Milano).
+  - Con chi lavoriamo: riga "[N] rifugi partner in Val Codera" (va
+    scritto il numero al posto di [N]).
+
+LOGHI DEI COLLABORATORI
+=======================
+Nella sezione "Con chi lavoriamo" AF Drones ed eV-Now hanno per ora solo il
+nome. Per aggiungere il logo:
+  1. salvate il file in assets/img/ come partner-af-drones.svg e
+     partner-ev-now.svg (va bene anche .png, meglio con sfondo trasparente);
+  2. in index.html e in en/index.html cercate "LOGO:": il commento indica
+     la riga da sostituire.
+Il logo TEF (assets/img/tef-logo.svg) e' ricavato da un'immagine: se Tech
+Europe Foundation vi fornisce il file ufficiale, sostituitelo con quello.
 
 
 FAIRBOX: QUANTO DETTAGLIO

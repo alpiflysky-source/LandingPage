@@ -963,45 +963,6 @@ p {
 /* --------------------------------------------------------------------------
    10. RICERCA E PROGETTI: la lista stampata
    -------------------------------------------------------------------------- */
-.proof {
-  background: var(--ground-2);
-  padding: var(--section) var(--m);
-  display: flex;
-  justify-content: center;
-}
-
-.guest-card {
-  width: min(64vw, 820px);
-  padding: 48px;
-  background: var(--paper);
-  color: var(--ink);
-  text-align: center;
-  border-radius: var(--r-lg);
-}
-
-.guest-title {
-  font-size: var(--step-lead);
-}
-
-.guest-photo {
-  margin-top: 32px;
-  aspect-ratio: 16 / 9;
-}
-
-.guest-names {
-  margin-top: 28px;
-  font-size: var(--step-body);
-  line-height: 1.6;
-  font-weight: 600;
-}
-
-.guest-notes {
-  margin: 24px auto 0;
-  max-width: 48ch;
-  display: grid;
-  gap: 12px;
-}
-
 /* --------------------------------------------------------------------------
    11. CONTATTI: il coupon da ritagliare
    -------------------------------------------------------------------------- */
@@ -1526,9 +1487,6 @@ p {
   .team-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .guest-card {
-    width: min(84vw, 760px);
-  }
   .contact-tabs {
     margin-inline: var(--m);
   }
@@ -1620,13 +1578,6 @@ p {
     gap: 28px 8px;
   }
 
-  .guest-card {
-    width: 100%;
-    padding: 28px 22px;
-  }
-  .guest-names {
-    font-size: var(--step-body);
-  }
 
   .contact-tabs {
     margin-inline: 12px;
@@ -2435,4 +2386,100 @@ p {
   .wordmark .wm-word {
     display: none;
   }
+}
+
+/* --------------------------------------------------------------------------
+   28. COLLABORATORI
+   -------------------------------------------------------------------------- */
+.partners {
+  padding-block: calc(var(--section) * 0.6) var(--section);
+}
+.partners-top { align-items: end; }
+.partners-top h2 { grid-column: 1 / 8; }
+.partners-lead {
+  grid-column: 8 / 13;
+  font-size: var(--step-lead);
+  line-height: 1.4;
+  color: var(--on-ground-soft);
+}
+.partners-grid {
+  margin-top: clamp(32px, 4vw, 56px);
+  padding-inline: var(--m);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+}
+.partner {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: clamp(24px, 3vw, 44px);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: var(--r-lg);
+}
+.partner-logo {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  max-width: 220px;
+  margin-bottom: 14px;
+  object-fit: contain;
+  object-position: left center;
+}
+.partner h3 {
+  font-size: var(--step-lead);
+  line-height: 1.25;
+}
+.partner-tag {
+  font-weight: 600;
+  color: var(--accent);
+}
+.partner p:last-child {
+  max-width: 46ch;
+  color: var(--ink-soft);
+}
+.partners-huts {
+  margin: 24px var(--m) 0;
+  color: var(--on-ground-soft);
+}
+
+/* --------------------------------------------------------------------------
+   29. TEF IGNITION
+   -------------------------------------------------------------------------- */
+.tef {
+  padding-block: var(--section);
+  background: var(--deep);
+  color: var(--on-deep);
+}
+.tef .grid { align-items: center; row-gap: 40px; }
+.tef-copy { grid-column: 1 / 7; }
+.tef-label {
+  font-weight: 700;
+  color: #6fd39a;
+  margin-bottom: 14px;
+}
+.tef-text {
+  margin-top: 22px;
+  max-width: 44ch;
+  font-size: var(--step-lead);
+  line-height: 1.4;
+  color: var(--on-deep-soft);
+}
+.tef-logo {
+  grid-column: 8 / 13;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  justify-self: end;
+}
+
+@media (max-width: 1100px) {
+  .partners-top h2, .partners-lead { grid-column: 1 / -1; }
+  .partners-lead { margin-top: 16px; }
+  .tef-copy, .tef-logo { grid-column: 1 / -1; }
+  .tef-logo { justify-self: start; max-width: 380px; }
+}
+@media (max-width: 760px) {
+  .partners-grid { grid-template-columns: minmax(0, 1fr); }
 }
