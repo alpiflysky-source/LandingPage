@@ -6,10 +6,10 @@ CONTENUTO DELLA CARTELLA
                         Workshop 3 TEF): apertura, il problema, punti di forza, per chi,
                         roadmap (fase 0, 1, 2, visione), la tecnologia in breve, con chi
                         lavoriamo, contatti (i moduli sono qui)
-  come-funziona.html    Approfondimento: metodo, confronto con l'elicottero, software di
-                        volo, come decide il software
-  tecnologia.html       Approfondimento: rete di valle e Fairbox, ricerca sul vento,
-                        oltre i rifugi e stato del progetto
+  come-funziona.html    Approfondimento breve: il percorso di una consegna, come decide il
+                        software, il confronto con l'elicottero
+  tecnologia.html       Approfondimento breve: il software, la rete di stazioni e la
+                        Fairbox, la ricerca sul vento
   chi-siamo.html        Approfondimento: il progetto, team, collaboratori, TEF Ignition
   grazie.html           Pagina "Messaggio inviato" (usata solo se il browser ha JavaScript disattivato)
   en/                   Versione inglese: index.html, how-it-works.html, technology.html,
@@ -192,8 +192,6 @@ la riga di riserva. Poi cancellate il commento.
     finche' non c'e' una fonte con il metodo di calcolo.
   - Come decide il software: "demo online, in prova con un operatore
     partner" (oggi e' visibile solo "demo online").
-  - Stato del progetto: riga "Stagione 2027 - Servizio pilota in Val Codera
-    con un operatore partner" (nome della valle e formulazione).
   - Con chi lavoriamo: riga "[N] rifugi partner in Val Codera" (va
     scritto il numero al posto di [N]).
 
