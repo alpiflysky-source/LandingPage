@@ -2,13 +2,18 @@ FAIRDRONES — NUOVO SITO
 =======================
 
 CONTENUTO DELLA CARTELLA
-  index.html            Homepage in italiano: apertura, progetto, ecosistema, punti di forza,
-                        metodo, software di volo, come decide il software, Fairbox, ricerca
-                        sul vento, oltre i rifugi e stato del progetto, team, con chi
-                        lavoriamo (collaboratori), TEF Ignition, contatti
+  index.html            Homepage, volutamente breve: apertura, come funziona in tre passi,
+                        per chi (rifugi, operatori, enti), la tecnologia in breve, con chi
+                        lavoriamo, contatti (i moduli sono qui)
+  come-funziona.html    Approfondimento: metodo, punti di forza, software di volo, come
+                        decide il software
+  tecnologia.html       Approfondimento: rete di valle e Fairbox, ricerca sul vento,
+                        oltre i rifugi e stato del progetto
+  chi-siamo.html        Approfondimento: il progetto, team, collaboratori, TEF Ignition
   grazie.html           Pagina "Messaggio inviato" (usata solo se il browser ha JavaScript disattivato)
-  en/index.html         Versione inglese completa della homepage (https://fairdrones.it/en/)
-  en/thank-you.html     Pagina "Message sent" in inglese
+  en/                   Versione inglese: index.html, how-it-works.html, technology.html,
+                        about.html, thank-you.html
+  assets/site.js        Script comune a tutte le pagine (tema, menu su telefono, moduli)
   _redirects            Indirizzo dell'area riservata (/area-riservata)
   privacy-policy.html   Informativa privacy (GDPR, artt. 13-14)
   cookie-policy.html    Informativa cookie
@@ -161,7 +166,7 @@ COSTI E LIMITI
 COME MODIFICARE I MODULI
   - Indirizzo di destinazione: si cambia SOLO dal pannello (punto C).
     Nel codice info@fairdrones.it compare solo come contatto di riserva
-    (costante CONTACT_EMAIL in fondo a index.html e link nel footer).
+    (costante CONTACT_EMAIL in assets/site.js e link nel footer).
   - Oggetto dell'email: campo nascosto name="subject" dentro ciascun form.
   - Aggiungere un campo: inserisci in index.html un <input> o <textarea> con
     un attributo name (es. name="telefono") e rifai il deploy: Netlify lo
@@ -173,8 +178,8 @@ SEGNAPOSTO DA CONFERMARE
 ========================
 Alcuni testi sono gia' nella pagina ma NASCOSTI finche' il team non li
 conferma. Nel codice sono preceduti da un commento <!-- DA CONFERMARE: ... -->.
-Cercate "DA CONFERMARE" in index.html e in en/index.html (vanno cambiati
-in entrambi i file).
+Cercate "DA CONFERMARE" in tutte le pagine .html, italiane e inglesi (vanno
+cambiati in entrambe le lingue).
 Per pubblicare un testo: togliete l'attributo hidden dall'elemento sotto il
 commento (es. <p hidden> diventa <p>) e, se il commento lo dice, cancellate
 la riga di riserva. Poi cancellate il commento.
@@ -193,8 +198,8 @@ LOGHI DEI COLLABORATORI
 I loghi di AF Drones (assets/img/partner-af-drones.svg) ed eV-Now!
 (assets/img/partner-ev-now.svg) sono PROVVISORI: ridisegnati a mano dalle
 immagini ricevute. Appena avete i file ufficiali, salvateli con lo stesso
-nome (se sono .png, cambiate anche l'estensione nei due img in index.html e
-en/index.html: cercate "LOGO PROVVISORIO").
+nome (se sono .png, cambiate anche l'estensione: cercate "partner-" in tutte
+le pagine .html, italiane e inglesi).
 Il logo TEF (assets/img/tef-logo.svg) e' ricavato da un'immagine: se Tech
 Europe Foundation vi fornisce il file ufficiale, sostituitelo con quello.
 
