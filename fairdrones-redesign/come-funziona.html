@@ -64,36 +64,41 @@
     </header>
     <div class="grid page-hero-body">
       <h1 id="page-title" class="display" data-rise>Come funziona</h1>
-      <p class="page-hero-lead" data-rise>Dalla richiesta del rifugio alla consegna in quota: il metodo, il software di volo e come decide se si parte.</p>
+      <p class="page-hero-lead" data-rise>Dalla richiesta alla consegna, in breve: i passaggi, come decide il software e il confronto con l'elicottero.</p>
     </div>
   </section>
 
-  <!-- IL METODO: l'itinerario di una consegna sul foglietto -->
-  <section class="method" id="metodo" aria-labelledby="metodo-title">
+  <!-- IL PERCORSO DI UNA CONSEGNA -->
+  <section class="steps" id="metodo" aria-labelledby="steps-title">
     <div class="grid">
-      <div class="method-text">
-        <h2 id="metodo-title" class="display head" data-rise>Dalla richiesta<br> alla consegna</h2>
-        <p class="method-lead" data-rise>Tre passaggi, dalla richiesta alla consegna. A volare è sempre un operatore autorizzato.</p>
-        <figure class="ph method-photo" data-rise><img src="assets/img/tab-efficienza.jpg" width="1400" height="788" alt="Drone pronto al decollo su una piazzola in un prato di montagna" loading="lazy"></figure>
+      <figure class="ph steps-photo" data-rise><img src="assets/img/tab-efficienza.jpg" width="1400" height="788" alt="Drone pronto al decollo su una piazzola in un prato di montagna" loading="lazy"></figure>
+      <div class="steps-body">
+        <h2 id="steps-title" class="display head" data-rise>Il percorso di una consegna</h2>
+        <p class="steps-lead" data-rise>Tre passaggi, dalla richiesta alla piazzola.</p>
+        <ol class="steps-list" data-rise>
+          <li><h3>La richiesta</h3><p>Chi ha bisogno di una consegna indica cosa, quanto e quando.</p></li>
+          <li><h3>La valutazione</h3><p>Il software confronta meteo, rotta e carico e dice se e quando si può volare.</p></li>
+          <li><h3>La consegna</h3><p>Un operatore autorizzato vola fino alla piazzola; le richieste vicine viaggiano insieme.</p></li>
+        </ol>
       </div>
-      <ol class="slip" data-rise>
-        <li>
-          <h3>Richiesta e pianificazione</h3>
-          <p class="slip-row"><span>Il rifugio sceglie giorno, chili e fascia oraria</span><span class="menu-dots" aria-hidden="true"></span><span class="slip-val">giorni prima</span></p>
-          <p class="slip-row"><span>Il software risponde se si può volare, e quando</span><span class="menu-dots" aria-hidden="true"></span><span class="slip-val">subito</span></p>
-        </li>
-        <li>
-          <h3>Ottimizzazione delle missioni</h3>
-          <p class="slip-row"><span>Le richieste vicine diventano una missione sola</span><span class="menu-dots" aria-hidden="true"></span><span class="slip-val">il giorno prima</span></p>
-          <p class="slip-row"><span>Tratta volabile e piazzola libera: si decolla</span><span class="menu-dots" aria-hidden="true"></span><span class="slip-val">5 min prima</span></p>
-        </li>
-        <li>
-          <h3>Consegna a destinazione</h3>
-          <p class="slip-row"><span>Un segnale avvisa chi è vicino</span><span class="menu-dots" aria-hidden="true"></span><span class="slip-val">2 min all'arrivo</span></p>
-          <p class="slip-row"><span>Se qualcuno entra nell'area, la discesa si ferma</span><span class="menu-dots" aria-hidden="true"></span><span class="slip-val">in discesa</span></p>
-        </li>
-        <li class="slip-total"><span>Dalla richiesta alla consegna</span><span>tre passaggi</span></li>
-      </ol>
+    </div>
+  </section>
+
+  <!-- COME DECIDE IL SOFTWARE: un frammento vero dell'interfaccia -->
+  <section class="decide decide-lite" id="come-decide" aria-labelledby="decide-title">
+    <div class="grid">
+      <div class="decide-text">
+        <h2 id="decide-title" class="display head" data-rise>Come decide<br> il software</h2>
+        <p class="decide-lead" data-rise>Ora per ora confronta il meteo lungo la tratta con i limiti del drone e con i voli già fatti. Poi dice se si parte, e quando.</p>
+        <dl class="verdicts" data-rise>
+          <div><dt><span class="esito s-ok">Volabile</span></dt><dd>Entro i limiti, in condizioni già provate.</dd></div>
+          <div><dt><span class="esito s-mar">Marginale</span></dt><dd>Vicino al limite o mai provato: decide l'operatore.</dd></div>
+          <div><dt><span class="esito s-no">Non volabile</span></dt><dd>Oltre il limite. Non si parte.</dd></div>
+        </dl>
+        <p class="status" data-rise><strong>Oggi:</strong> demo online. Ogni volo importato allarga le condizioni in cui sappiamo volare.</p>
+        <!-- DA CONFERMARE: possiamo dire "in prova con un operatore partner"? Se sì, togli hidden qui sotto e cancella la riga sopra -->
+        <p class="status" hidden><strong>Oggi:</strong> demo online, in prova con un operatore partner. Ogni volo importato allarga le condizioni in cui sappiamo volare.</p>
+      </div>
     </div>
   </section>
 
@@ -116,90 +121,6 @@
         </div>
       </div>
       <figure class="ph strengths-photo" data-rise><img src="assets/img/hero.jpg" width="2000" height="1333" alt="Drone in volo davanti a una catena di montagne" loading="lazy"></figure>
-    </div>
-  </section>
-
-  <!-- IL SOFTWARE DI VOLO: i cedolini lungo il bordo -->
-  <section class="software" id="software" aria-labelledby="software-title">
-    <div class="grid sw-top">
-      <h2 id="software-title" class="display head" data-rise>Il software<br> di volo</h2>
-      <p class="sw-lead" data-rise>Meteo, rotta, carico e stato della piazzola in un unico strumento per decidere un volo in quota. Pensato per gli operatori, semplice per i rifugi.</p>
-    </div>
-    <div class="sw-console" data-rise>
-      <figure class="sw-shot">
-        <img src="assets/img/IMG-20261015-WA0006.jpg" width="1280" height="720" alt="Mani che tengono un radiocomando per droni con la rotta di volo sullo schermo" loading="lazy">
-        <span class="sw-live" aria-hidden="true">Missione in corso</span>
-      </figure>
-      <ol class="sw-list">
-        <li class="sw-item">
-          <span class="sw-num" aria-hidden="true">01</span>
-          <div class="sw-body">
-            <h3>Piano di volo</h3>
-            <p>Ottimizza il piano operativo in base a:</p>
-            <ul class="sw-tags"><li>la rotta</li><li>le condizioni meteo</li><li>il peso del carico</li></ul>
-          </div>
-        </li>
-        <li class="sw-item">
-          <span class="sw-num" aria-hidden="true">02</span>
-          <div class="sw-body">
-            <h3>Telemetria</h3>
-            <p>Tutti i dati di volo in un'unica vista per l'operatore.</p>
-            <dl class="sw-read" aria-hidden="true">
-              <div><dt>Quota</dt><dd>2.140 m</dd></div>
-              <div><dt>Vento</dt><dd>6 m/s</dd></div>
-              <div><dt>Batteria</dt><dd>78%</dd></div>
-            </dl>
-          </div>
-        </li>
-        <li class="sw-item">
-          <span class="sw-num" aria-hidden="true">03</span>
-          <div class="sw-body">
-            <h3>Margini di sicurezza</h3>
-            <p>Controlli automatici prima e durante la missione.</p>
-            <ul class="sw-checks" aria-hidden="true"><li>Meteo</li><li>Batteria</li><li>Area di atterraggio</li></ul>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- COME DECIDE IL SOFTWARE: un frammento vero dell'interfaccia -->
-  <section class="decide" id="come-decide" aria-labelledby="decide-title">
-    <div class="grid">
-      <div class="decide-text">
-        <h2 id="decide-title" class="display head" data-rise>Come decide<br> il software</h2>
-        <p class="decide-lead" data-rise>Ora per ora confronta il meteo lungo la tratta con i limiti del drone e con i voli già fatti. Poi dice se si parte, e quando.</p>
-        <dl class="verdicts" data-rise>
-          <div><dt><span class="esito s-ok">Volabile</span></dt><dd>Entro i limiti, in condizioni già provate.</dd></div>
-          <div><dt><span class="esito s-mar">Marginale</span></dt><dd>Vicino al limite o mai provato: decide l'operatore.</dd></div>
-          <div><dt><span class="esito s-no">Non volabile</span></dt><dd>Oltre il limite. Non si parte.</dd></div>
-        </dl>
-        <p class="status" data-rise><strong>Oggi:</strong> demo online. Ogni volo importato allarga le condizioni in cui sappiamo volare.</p>
-        <!-- DA CONFERMARE: possiamo dire "in prova con un operatore partner"? Se sì, togli hidden qui sotto e cancella la riga sopra -->
-        <p class="status" hidden><strong>Oggi:</strong> demo online, in prova con un operatore partner. Ogni volo importato allarga le condizioni in cui sappiamo volare.</p>
-      </div>
-      <figure class="ui-frag" data-ui data-rise>
-        <div class="ui-head">
-          <p class="ui-title">Valutazione della missione</p>
-          <p class="ui-sub">Hub di valle → Rifugio Pian dei Camosci · 2 rotazioni · FlyCart 100</p>
-        </div>
-        <div class="ui-verdict">
-          <span class="esito s-ok">Volabile</span>
-          <p><strong>Finestra 07:00–10:00</strong><br>Il vento in quota sale nel pomeriggio e supera il limite tra le 14 e le 16.</p>
-        </div>
-        <div class="ui-chart">
-          <p class="ui-axis">Vento in quota, m/s · ora per ora</p>
-          <svg class="chart-wide" viewBox="0 0 640 220" role="img" aria-label="Vento in quota ora per ora: sotto il limite fino alle 11, oltre il limite di 12 metri al secondo tra le 14 e le 16"><text x="28" y="194.0" text-anchor="end">0</text><text x="28" y="150.0" text-anchor="end">4</text><text x="28" y="106.0" text-anchor="end">8</text><text x="28" y="62.0" text-anchor="end">12</text><text x="28" y="18.0" text-anchor="end">16</text><line class="lim" x1="36" x2="632" y1="58.0" y2="58.0"/><line class="mar" x1="36" x2="632" y1="77.8" y2="77.8"/><rect class="win" x="78.6" y="14" width="127.7" height="176"/><rect class="b-ok" x="39.0" y="144.9" width="36.6" height="45.1"/><text x="57.3" y="208" text-anchor="middle">6</text><rect class="b-ok" x="81.6" y="139.4" width="36.6" height="50.6"/><rect class="b-ok" x="124.1" y="132.8" width="36.6" height="57.2"/><text x="142.4" y="208" text-anchor="middle">8</text><rect class="b-ok" x="166.7" y="124.0" width="36.6" height="66.0"/><rect class="b-ok" x="209.3" y="108.6" width="36.6" height="81.4"/><text x="227.6" y="208" text-anchor="middle">10</text><rect class="b-ok" x="251.9" y="93.2" width="36.6" height="96.8"/><rect class="b-mar" x="294.4" y="73.4" width="36.6" height="116.6"/><text x="312.7" y="208" text-anchor="middle">12</text><rect class="b-mar" x="337.0" y="64.6" width="36.6" height="125.4"/><rect class="b-no" x="379.6" y="48.1" width="36.6" height="141.9"/><text x="397.9" y="208" text-anchor="middle">14</text><rect class="b-no" x="422.1" y="40.4" width="36.6" height="149.6"/><rect class="b-no" x="464.7" y="53.6" width="36.6" height="136.4"/><text x="483.0" y="208" text-anchor="middle">16</text><rect class="b-mar" x="507.3" y="70.1" width="36.6" height="119.9"/><rect class="b-ok" x="549.9" y="99.8" width="36.6" height="90.2"/><text x="568.1" y="208" text-anchor="middle">18</text><rect class="b-ok" x="592.4" y="120.7" width="36.6" height="69.3"/></svg>
-          <svg class="chart-phone" viewBox="0 0 360 280" role="img" aria-label="Vento in quota ora per ora: sotto il limite fino alle 11, oltre il limite di 12 metri al secondo tra le 14 e le 16"><text x="28" y="252.0" text-anchor="end">0</text><text x="28" y="198.0" text-anchor="end">4</text><text x="28" y="144.0" text-anchor="end">8</text><text x="28" y="90.0" text-anchor="end">12</text><text x="28" y="36.0" text-anchor="end">16</text><rect class="win" x="56.9" y="30" width="68.6" height="216"/><line class="lim" x1="34" x2="354" y1="84.0" y2="84.0"/><line class="mar" x1="34" x2="354" y1="108.3" y2="108.3"/><rect class="b-ok" x="36.0" y="190.7" width="18.9" height="55.3"/><text x="45.4" y="270" text-anchor="middle">6</text><rect class="b-ok" x="58.9" y="183.9" width="18.9" height="62.1"/><rect class="b-ok" x="81.7" y="175.8" width="18.9" height="70.2"/><rect class="b-ok" x="104.6" y="165.0" width="18.9" height="81.0"/><text x="114.0" y="270" text-anchor="middle">9</text><rect class="b-ok" x="127.4" y="146.1" width="18.9" height="99.9"/><rect class="b-ok" x="150.3" y="127.2" width="18.9" height="118.8"/><rect class="b-mar" x="173.1" y="102.9" width="18.9" height="143.1"/><text x="182.6" y="270" text-anchor="middle">12</text><rect class="b-mar" x="196.0" y="92.1" width="18.9" height="153.9"/><rect class="b-no" x="218.9" y="71.8" width="18.9" height="174.2"/><rect class="b-no" x="241.7" y="62.4" width="18.9" height="183.6"/><text x="251.1" y="270" text-anchor="middle">15</text><rect class="b-no" x="264.6" y="78.6" width="18.9" height="167.4"/><rect class="b-mar" x="287.4" y="98.8" width="18.9" height="147.2"/><rect class="b-ok" x="310.3" y="135.3" width="18.9" height="110.7"/><text x="319.7" y="270" text-anchor="middle">18</text><rect class="b-ok" x="333.1" y="160.9" width="18.9" height="85.1"/></svg>
-        </div>
-        <p class="ui-legend"><span class="lg-win">finestra di volo</span><span class="lg-lim">limite del drone, 12 m/s</span><span class="lg-mar">85% del limite</span></p>
-        <ul class="ui-reasons">
-          <li>Vento e raffiche entro il limite nella finestra</li>
-          <li>Condizione già dimostrata da 2 voli</li>
-          <li>Energia sufficiente con il 25% di riserva</li>
-        </ul>
-        <figcaption>Esempio con meteo simulato e luoghi fittizi, dalla demo del software.</figcaption>
-      </figure>
     </div>
   </section>
 

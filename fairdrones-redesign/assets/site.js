@@ -24,8 +24,8 @@
   // Vecchi indirizzi della homepage (es. /#metodo): le sezioni ora sono nelle pagine di approfondimento
   if (document.body.dataset.page === 'home' && location.hash) {
     const MOVED = EN
-      ? { metodo: 'how-it-works.html', software: 'how-it-works.html', 'come-decide': 'how-it-works.html', fairbox: 'technology.html', ricerca: 'technology.html', 'prossimi-passi': 'technology.html', progetto: 'about.html', team: 'about.html', collaboratori: 'about.html' }
-      : { metodo: 'come-funziona.html', software: 'come-funziona.html', 'come-decide': 'come-funziona.html', fairbox: 'tecnologia.html', ricerca: 'tecnologia.html', 'prossimi-passi': 'tecnologia.html', progetto: 'chi-siamo.html', team: 'chi-siamo.html', collaboratori: 'chi-siamo.html' };
+      ? { metodo: 'how-it-works.html', software: 'technology.html', 'come-decide': 'how-it-works.html', fairbox: 'technology.html', ricerca: 'technology.html', progetto: 'about.html', team: 'about.html', collaboratori: 'about.html' }
+      : { metodo: 'come-funziona.html', software: 'tecnologia.html', 'come-decide': 'come-funziona.html', fairbox: 'tecnologia.html', ricerca: 'tecnologia.html', progetto: 'chi-siamo.html', team: 'chi-siamo.html', collaboratori: 'chi-siamo.html' };
     const to = MOVED[location.hash.slice(1)];
     if (to) location.replace(to + location.hash);
   }

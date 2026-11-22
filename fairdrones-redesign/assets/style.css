@@ -2751,3 +2751,8 @@ p {
 @media (max-width: 560px) {
   .pillars-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* pagine interne sintetiche */
+.decide-lite .decide-text { grid-column: 1 / 9; }
+.decide-lite .verdicts { max-width: 56ch; }
+@media (max-width: 1100px) { .decide-lite .decide-text { grid-column: 1 / -1; } }
