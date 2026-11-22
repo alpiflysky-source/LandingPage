@@ -2678,3 +2678,46 @@ p {
   .page-hero { padding-top: 112px; }
   .page-hero h1 { font-size: var(--step-head); }
 }
+
+/* --------------------------------------------------------------------------
+   33. HOMEPAGE: il problema e la crescita
+   -------------------------------------------------------------------------- */
+.problem {
+  padding-block: var(--section);
+  background: var(--deep);
+  color: var(--on-deep);
+}
+.problem .grid { align-items: end; row-gap: 40px; }
+.problem-copy { grid-column: 1 / 8; }
+.problem-text {
+  margin-top: 24px;
+  max-width: 46ch;
+  font-size: var(--step-lead);
+  line-height: 1.45;
+  color: var(--on-deep-soft);
+}
+.problem-places { grid-column: 9 / 13; }
+.problem-places h3 {
+  font-size: var(--step-body);
+  color: #6fd39a;
+  margin-bottom: 8px;
+}
+.problem-places .uses { margin-top: 0; grid-template-columns: minmax(0, 1fr); }
+.problem-places .uses li { border-top-color: rgba(238, 243, 238, 0.18); }
+
+.eco { background: var(--ground-2); padding-block: var(--section); }
+
+.scale { padding-block: var(--section); }
+.scale .grid { align-items: center; row-gap: 40px; }
+.scale-copy { grid-column: 1 / 7; }
+.scale-text {
+  margin-top: 24px;
+  max-width: 42ch;
+  font-size: var(--step-lead);
+  line-height: 1.45;
+  color: var(--on-ground-soft);
+}
+
+@media (max-width: 1100px) {
+  .problem-copy, .problem-places, .scale-copy { grid-column: 1 / -1; }
+}
