@@ -2721,3 +2721,33 @@ p {
 @media (max-width: 1100px) {
   .problem-copy, .problem-places, .scale-copy { grid-column: 1 / -1; }
 }
+
+/* --------------------------------------------------------------------------
+   34. HOMEPAGE: punti di forza in breve
+   -------------------------------------------------------------------------- */
+.pillars { padding-block: var(--section); }
+.pillars-title { grid-column: 1 / -1; }
+.pillars-grid {
+  margin-top: clamp(32px, 4vw, 56px);
+  padding-inline: var(--m);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 48px);
+}
+.pillar h3 {
+  font-size: var(--step-sub);
+  line-height: 1.1;
+  margin-bottom: 12px;
+  color: var(--accent);
+}
+.pillar p {
+  max-width: 26ch;
+  font-size: var(--step-body);
+  color: var(--on-ground-soft);
+}
+@media (max-width: 1100px) {
+  .pillars-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .pillars-grid { grid-template-columns: minmax(0, 1fr); }
+}

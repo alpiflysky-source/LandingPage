@@ -6,7 +6,8 @@ CONTENUTO DELLA CARTELLA
                         Workshop 3 TEF): apertura, il problema, punti di forza, per chi,
                         roadmap (fase 0, 1, 2, visione), la tecnologia in breve, con chi
                         lavoriamo, contatti (i moduli sono qui)
-  come-funziona.html    Approfondimento: metodo, software di volo, come decide il software
+  come-funziona.html    Approfondimento: metodo, confronto con l'elicottero, software di
+                        volo, come decide il software
   tecnologia.html       Approfondimento: rete di valle e Fairbox, ricerca sul vento,
                         oltre i rifugi e stato del progetto
   chi-siamo.html        Approfondimento: il progetto, team, collaboratori, TEF Ignition
