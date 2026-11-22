@@ -2,12 +2,11 @@ FAIRDRONES — NUOVO SITO
 =======================
 
 CONTENUTO DELLA CARTELLA
-  index.html            Homepage, volutamente breve e generale (non solo rifugi): apertura,
-                        il problema, come funziona in tre passi, per chi, partiamo dalla
-                        montagna (crescita), la tecnologia in breve, con chi lavoriamo,
-                        contatti (i moduli sono qui)
-  come-funziona.html    Approfondimento: metodo, punti di forza, software di volo, come
-                        decide il software
+  index.html            Homepage, volutamente breve e generale (allineata al deck del
+                        Workshop 3 TEF): apertura, il problema, punti di forza, per chi,
+                        roadmap (fase 0, 1, 2, visione), la tecnologia in breve, con chi
+                        lavoriamo, contatti (i moduli sono qui)
+  come-funziona.html    Approfondimento: metodo, software di volo, come decide il software
   tecnologia.html       Approfondimento: rete di valle e Fairbox, ricerca sul vento,
                         oltre i rifugi e stato del progetto
   chi-siamo.html        Approfondimento: il progetto, team, collaboratori, TEF Ignition
